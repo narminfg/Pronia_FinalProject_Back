@@ -1,0 +1,36 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row">
+    <div class="col-lg-2">
+        <h1 class="h3 mb-4 text-gray-800">Category Delete Page</h1>
+    </div>
+    <div class="col-lg-2">
+        <a class="btn btn-primary" asp-action="index" asp-controller="Product" asp-area="manage"> Go To Home</a>
+    </div>
+    <div class="col-lg-2">
+        <a class="btn btn-danger" asp-action="deleteproduct" asp-controller="Product" asp-area="manage" asp-route-id="@Model.Id">Delete</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                @if (Model.MainImage != null)
+                {
+                    <img class="card-img-top" src="~/assets/img/product/@Model.MainImage" />
+                }
+                <h5 class="card-title">Name: @Model.Title</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model.ProductImages != null && Model.ProductImages.Count() > 0)
+{
+    <div class="">
+       <img src="~/assets/img/product/@Model.ProductImages"/>
+    </div>
+}

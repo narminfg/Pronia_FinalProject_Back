@@ -1,0 +1,69 @@
+﻿@model Order
+
+
+<form id="orderCheckoutForm" method="post" class="checkout-form">
+    <div class="checkout-form-inner">
+        <h3>BILLING DETAILS</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="checkout-form-list">
+                    <label asp-for="Name" class="required">First Name</label>
+                    <input asp-for="Name" id="f_name" required />
+                    <span asp-validation-for="Name"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="checkout-form-list">
+                    <label asp-for="SurnName" class="required">Last Name</label>
+                    <input asp-for="SurnName"  id="l_name" required />
+                    <span asp-validation-for="SurnName"></span>
+                </div>
+            </div>
+            
+            <div class="col-md-12">
+                <div class="checkout-form-list">
+                    <label asp-for="Street" class="required mt-20">Address</label>
+                    <input asp-for="Street" id="street-address" required />
+                    <span asp-validation-for="Street"></span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="checkout-form-list">
+                    <label asp-for="Email" class="required">Email Address</label>
+                    <input asp-for="Email" id="email" required />
+                    <span asp-validation-for="Email"></span>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="checkout-form-list">
+                    <label asp-for=Country>State / Country</label>
+                    <input asp-for=Country id="state" />
+                    <span asp-validation-for="Country"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="checkout-form-list">
+                    <label asp-for="City" class="required">Town / City</label>
+                    <input asp-for="City" id="town" required />
+                    <span asp-validation-for="City"></span>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="checkout-form-list">
+                    <label asp-for="PhoneNumber">Phone</label>
+                    <input asp-for="PhoneNumber" id="phone" />
+                    <span asp-validation-for="PhoneNumber"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="checkout-form-list">
+                    <label asp-for="ZipCode" class="required">Postcode / ZIP</label>
+                    <input asp-for="ZipCode" id="postcode" required />
+                    <span asp-validation-for="ZipCode"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

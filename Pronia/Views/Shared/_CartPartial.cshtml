@@ -1,0 +1,93 @@
+﻿@model List<BasketVM>
+@{
+    double totalPrice = 0;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Remove</th>
+                        <th scope="col">Images</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+
+                    </tr>
+                </thead>
+                <tbody class="carttable">
+                    @foreach (BasketVM basketVM in Model)
+                    {
+
+                        <tr>
+                            <td class="product-remove">
+                                <a data-id="@basketVM.Id" class="removeProdInCart" asp-controller="basket" asp-action="DeleteCart">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </a>
+                            </td>
+                            <td class="product-thumbnail">
+                                <a>
+                                    <img src="/assets/img/product/@basketVM.Image" alt="" />
+                                </a>
+                            </td>
+                            <td class="product-name">
+                                <a>@basketVM.Title</a>
+                            </td>
+                            <td class="product-price">
+                                <span class="amount">$@basketVM.Price</span>
+                            </td>
+                            <td class="product-quantity">
+                                <div class="number">
+                                    <span data-id="@basketVM.Id" class="minus-btn">-</span>
+                                    <input class="countİnpForProduct" type="text" value=@basketVM.Count />
+                                    <span data-id="@basketVM.Id" class="plus-btn">+</span>
+                                </div>
+                            </td>
+                            <td class="product-subtotal">
+                                <span class="amount">$@(basketVM.Count * basketVM.Price)</span>
+                            </td>
+                        </tr>
+                        totalPrice += basketVM.Count * basketVM.Price;
+
+                    }
+
+
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="cart-page-total">
+                        <h2>Cart totals</h2>
+                        <ul>
+                            <li>
+                                Subtotal
+                                <span>$@totalPrice</span>
+                            </li>
+                            <li>
+                                Total
+                                <span>$@totalPrice</span>
+                            </li>
+                        </ul>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-controller="order" asp-action="checkout">Proceed Checkout</a>
+                        }else{
+                            <a asp-controller="acconut" asp-action="login">Proceed Checkout</a>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

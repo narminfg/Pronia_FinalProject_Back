@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-item">
+                        <h2 class="breadcrumb-heading">CONTACT</h2>
+                        <ul>
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>Contact Us</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-form-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-wrap">
+                        <div class="contact-info">
+                            <h2 class="contact-title">Contact Info:</h2>
+                            <p class="contact-desc">
+                                Fill the form amd our teaam will get to back to you within
+                                24 hours.
+                            </p>
+                            <ul class="contact-list">
+                                <li>
+                                    <i class="fa-solid fa-phone"></i>
+                                    <a href="tel://123-456-789">123 456 789</a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <a href="mailto://info@example.com">info@example.com</a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>13, Your Address, Here</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <form id="contact-form" class="contact-form">
+                            <div class="group-input mb-4 d-flex">
+                                <div class="form-field me-lg-30 mb-35 mb-lg-0">
+                                    <input type="text" name="con_firstName" placeholder="First Name*" class="input-field" />
+                                </div>
+                                <div class="form-field mb-35">
+                                    <input type="text" name="con_lastName" placeholder="Last Name*" class="input-field ms-4" />
+                                </div>
+                            </div>
+                            <div class="group-input mb-5 d-flex">
+                                <div class="form-field me-lg-30 mb-35 mb-lg-0">
+                                    <input type="text" name="con_phone" placeholder="Phone*" class="input-field" />
+                                </div>
+                                <div class="form-field mb-35">
+                                    <input type="text" name="con_email" placeholder="Email*" class="input-field ms-4" />
+                                </div>
+                            </div>
+                            <div class="textarea_form mb-4">
+                                <textarea name="con_message" placeholder="Message" class="textarea-field"></textarea>
+                            </div>
+                            <div class="contact-button-wrap">
+                                <button type="submit" class="btn btn-pronia-primary">
+                                    Post Comment
+                                </button>
+                            </div>
+                            <p class="form-message mt-3 mb-0"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

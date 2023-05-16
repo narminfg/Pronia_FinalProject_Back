@@ -1,0 +1,344 @@
+﻿@inject ILayoutService layoutservice
+
+@{
+    IDictionary<string, string> settings = await layoutservice.GetSettings();
+    IEnumerable<BasketVM> basketVMs = await layoutservice.GetBaskets();
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pronia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="icon" href="~/assets/img/slider/slide1.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+   
+</head>
+
+<body>
+    <section id="header">
+        <div class="header-all">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="header-top-text">
+                            <span class="pronia offer">@settings.FirstOrDefault(s=>s.Key == "Slogan").Value</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-middle">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="headermiddleall">
+                                <div class="header_contact">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <a href="">+00 123 456 789</a>
+                                </div>
+                                <div class="header-logo">
+                                    <a asp-controller="home" asp-action="index">
+                                        <img src="/assets/img/logo/Pronia.webp" alt="" />
+                                    </a>
+                                </div>
+                                <div class="header_right">
+                                    <ul>
+                                        <li class="search">
+                                            <a href="#">
+                                                <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="nav-item dropdown ">
+                                            <a class="nav-link" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true"
+                                               aria-expanded="false">
+                                                <i class="fa-solid fa-user"></i> <span class="sr-only">(current)</span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                                @if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
+                                                {
+                                                    <a class="dropdown-item" asp-controller="Account" asp-action="Profile">My Account</a>
+                                                    <a class="dropdown-item" asp-controller="Account" asp-action="Logout">LogOut</a>
+                                                    
+                                                }else{
+                                                    <a class="dropdown-item" asp-controller="Account" asp-action="Login">Login</a>
+                                                    <a class="dropdown-item" asp-controller="Account" asp-action="Register">Register</a>
+                                                }
+                                            </div>
+                                        </li>
+                                        <li class="wishlist">
+                                            <a asp-controller="wishlist" asp-action="index">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                        </li>
+                                        <li class="minicart">
+                                            <a class="minicart-btn" href="basket.html" data-bs-toggle="offcanvas"
+                                               data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span class="quantity">@basketVMs.Count()</span>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="menu">
+                                            <a class="menu-btn" href="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                                <i class="fa-solid fa-bars"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div id="search-modal">
+                                        <form>
+                                            <input class="searchInput" type="text" placeholder="Search...">
+                                            <button class="search-btn" type="submit">Search</button>
+                                        </form>
+                                        <div class="search_body">
+                                            <ul id="searchbody">
+                                                @*@await Html.PartialAsync("_SearchPartial",new List<Product>())*@
+                                            </ul>
+                                        </div>
+                                        <button id="close"><i class="fa-solid fa-xmark"></i></button>
+                                        
+                                    </div>
+
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                        <div class="offcanvas-body">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="minicart-content">
+                                                        <div class="minicart-heading">
+                                                            <h4>Shopping Cart</h4>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="minicart-inner-content">
+                                                            @await Html.PartialAsync("_BasketPartial",basketVMs)
+                                                        </div>
+
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="header-contact offcanvas-contact">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="">+00 123 456 789</a>
+                    </div>
+                    <div class="offcanvas-user-info">
+                        <ul class="dropdown-wrap">
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    <i class="fa-solid fa-user"></i> <span class="sr-only">(current)</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="my account.html">My Account</a>
+                                    <a class="dropdown-item" href="login-register.html">Login | Register</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="wishlist.html">
+                                    <i class="fa-regular fa-heart"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="offcanvas-menu-area">
+                        <nav>
+                            <ul class="mobile-menu">
+                                <li>
+                                    <a href="index.html">HOME</a>
+                                </li>
+                                <li>
+                                    <a href="shop.html">SHOP</a>
+                                </li>
+                                <li>
+                                    <a href="blog.html">BLOG</a>
+                                </li>
+                                <li>
+                                    <a href="aboutus.html">ABOUT US</a>
+                                </li>
+                                <li>
+                                    <a href="contactus.html">CONTACT US</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="main-menu position-relative">
+                                    <nav>
+                                        <ul>
+                                            <li>
+                                                <a asp-controller="Home" asp-action="Index">HOME</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Shop" asp-action="Index">SHOP</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Blog" asp-action="Index">BLOG</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="About" asp-action="Index">ABOUT US</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Contact" asp-action="Index">CONTACT US</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @RenderBody()
+
+    <div id="product-modal" class="modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <section id="footer">
+        <div class="footer-area">
+            <div class="footer-top-section">
+                <div class="container">
+                    <div class="row d-flex align-items-center justify-content-between">
+                        <div class="col-lg-3">
+                            <div class="footer-widget-item">
+                                <div class="footer-widget-logo">
+                                    <a href="index.html">
+                                        <img src="/assets/img/logo/Pronia.webp" alt="" />
+                                    </a>
+                                </div>
+                                <p class="footer-widget-desc">
+                                    Lorem ipsum dolor sit amet, consec adipisl elit, sed do
+                                    eiusmod tempor
+                                    <br />
+                                    incidio ut labore et dolore magna.
+                                </p>
+                                <div class="social-link">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <i class="fa-brands fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="fa-brands fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="fa-brands fa-pinterest"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="fa-brands fa-dribbble"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 pt-40">
+                            <div class="footer-widget-item">
+                                <h3 class="footer-widget-title">Useful Links</h3>
+                                <ul>
+                                    <li><a href="">About Pronia</a></li>
+                                    <li><a href="">How to shop</a></li>
+                                    <li><a href="">FAQ</a></li>
+                                    <li><a href="">Contact us</a></li>
+                                    <li><a href="">Log in</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 pt-40">
+                            <div class="footer-widget-item">
+                                <h3 class="footer-widget-title">My Account</h3>
+                                <ul>
+                                    <li><a href="">Sign In</a></li>
+                                    <li><a href="">View Cart</a></li>
+                                    <li><a href="">My Wishlist</a></li>
+                                    <li><a href="">Track My Order</a></li>
+                                    <li><a href="">Help</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 pt-40">
+                            <div class="footer-widget-item">
+                                <h3 class="footer-widget-title">Our Service</h3>
+                                <ul>
+                                    <li><a href="">Payment Methods</a></li>
+                                    <li><a href="">Money Guarantee!</a></li>
+                                    <li><a href="">Returns</a></li>
+                                    <li><a href="">Shipping</a></li>
+                                    <li><a href="">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <hr />
+                        <div class="col-lg-12">
+                            <div class="copyright">
+                                <span class="copyright-text">
+                                    © 2021 Pronia Made with
+                                    <i class="fa-solid fa-heart text-danger"></i>
+                                    By HasThemes
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    @RenderSection("Scripts",false)
+    <script src="~/assets/js/custom.js" asp-append-version="true"></script>
+    <script src="~/assets/js/app.js" asp-append-version="true"></script>
+
+</body>
+
+</html>

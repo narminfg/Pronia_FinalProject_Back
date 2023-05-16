@@ -1,0 +1,23 @@
+﻿@*@model Review
+
+<form class="feedback-form" method="post" asp-controller="product" asp-action="AddReview">
+    <input type="hidden" name="ProductId" value="@Model.ProductId"/>
+    <div class="group-input">
+        <div class="form-field">
+            <input asp-for="Name" name="name" placeholder="Your Name" class="input-field">
+        </div>
+        <div class="form-field">
+            <input asp-for="Email" name="email" placeholder="Your Email" class="input-field">
+            <span asp-validation-for="Email"></span>
+        </div>
+    </div>
+    <div class="form-field">
+        <textarea asp-for="Description" name="message" placeholder="Message" class="textarea-field"></textarea>
+    </div>
+    <div class="button-wrap">
+        <button type="submit" value="submit" name="submit" class="btn-pronia-primary">
+            Post
+            Comment
+        </button>
+    </div>
+</form>*@

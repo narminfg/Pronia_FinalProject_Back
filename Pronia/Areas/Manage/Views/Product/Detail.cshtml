@@ -1,0 +1,41 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Detail";
+    int count = 0;
+}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-2">
+            <h1 class="h3 mb-4 text-gray-800">Product Detail Page</h1>
+        </div>
+        <div class="col-lg-2">
+            <a class="btn btn-primary" asp-action="index" asp-controller="product" asp-area="manage"> Go To Home</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4" style="width: 50rem;">
+            <div class="card mx-3">
+                @if (Model.MainImage != null)
+                {
+                    <img class="card-img-top w-50" src="~/assets/img/product/@Model.MainImage" />
+                }
+                <h5 class="card-title text-bg-danger text-danger">Name: @Model.Title</h5>
+                <div class="card-title text-danger text">
+                    <p style="color:black;">
+                        @Model.Description
+                    </p>
+                </div>
+                <div class="card-title text-danger text">
+                    <p class="text-danger text-danger" style="color:black;">
+                        @Model.CreatedBy
+                    </p>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BasketVM>
+
+<ul class="minicart-list">
+    @foreach (BasketVM basketVM in Model)
+    {
+        <li class="minicart-product d-flex">
+            <div class="minicart-thumb">
+                <a href="single-product.html" class="product-item-img">
+                    <img src="/assets/img/product/@basketVM.Image" alt="" />
+                </a>
+            </div>
+            <div class="product-item-content">
+                <h3 class="product-name">
+                    <a class="product-item-title"
+                   href="single-product.html">@basketVM.Title</a>
+                </h3>
+                <span class="product-item-quantity">@basketVM.Count x $@basketVM.Price</span>
+            </div>
+            <a data-productId="@basketVM.Id" class="product-item-remove" href="">
+                <i class="fa-solid fa-xmark"></i>
+            </a>
+        </li>
+    }
+
+</ul>
+<div class="minicart-item-total">
+    <span>Subtotal</span>
+    <span class="amount">$@(Model.Sum(b => b.Count * b.Price))</span>
+</div>
+<div class="group-btn-wrap">
+    <a asp-controller="basket" asp-action="ViewCart" class="btn btn-dark">View Cart</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-controller="order" asp-action="checkout" class="btn btn-dark">Checkout</a>
+    }
+    else
+    {
+        <a asp-controller="account" asp-action="login" class="btn btn-dark">Checkout</a>
+    }
+
+</div>

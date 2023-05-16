@@ -1,0 +1,97 @@
+﻿@model Product
+
+<div class="modal-header">
+    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+    <div class="modal-wrap row">
+        <div class="col-lg-6">
+            <div class="single-product-img">
+                <div class="modal-carousel">
+                    @if (Model.ProductImages !=null && Model.ProductImages.Count()>0)
+                    {
+                        @foreach (ProductImage productImage in Model.ProductImages)
+                        {
+                           <div class="box">
+                              <a class="single-img" href="">
+                                <img src="~/assets/img/product/@productImage.Image" alt="">
+                              </a>
+                            </div> 
+                        }
+                    }
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="single-product-content">
+                <h2 class="title">@Model.Title</h2>
+                <div class="price-box">
+                    <span class="new-price">$@Model.Price</span>
+                </div>
+                <div class="rating-box-wrap">
+                    <div class="rating-box">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-star"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="review-status">
+                        <a href="">( 1 Review )</a>
+                    </div>
+                </div>
+                <div class="selector-wrap color-option">
+                    <span class="selector-title">Color</span>
+                    <select name="" id="">
+                        <option value="default">Black & White</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="red">Red</option>
+                    </select>
+                </div>
+                <div class="selector-wrap color-option">
+                    <span class="selector-title">Size</span>
+                    <select name="" id="">
+                        <option value="medium">Medium Size & Poot</option>
+                        <option value="large">Large Size With Poot</option>
+                        <option value="small">Small Size With Poot</option>
+                    </select>
+                </div>
+                <p class="short-desc">@Model.Description</p>
+                <ul class="quantity-with-btn">
+                    <li class="product-quantity">
+                        <div class="number">
+                            <span data-id="@Model.Id" class="minus-btn">-</span>
+                            <input class="countİnpForProduct" type="text" value=@Model.Count />
+                            <span data-id="@Model.Id" class="plus-btn">+</span>
+                        </div>
+                    </li>
+                    <li class="add-to-cart">
+                        <a asp-action="viewcart" asp-controller="Basket" asp-route-id="@Model.Id" class="btn btn-custom-size addToBasket">Add to cart</a>
+                    </li>
+                    <li class="wishlist-btn-wrap">
+                        <a asp-controller="wishlist" asp-action="AddWishList" asp-route-id="@Model.Id" class="custom-circle-btn addToWishList">
+                            <i class="fa-regular fa-heart"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/assets/js/custom.js"></script>
+<script src="~/assets/js/app.js"></script>

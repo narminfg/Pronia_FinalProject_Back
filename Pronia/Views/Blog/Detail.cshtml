@@ -1,0 +1,259 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Detail";
+    IEnumerable<Blog> blogs = ViewBag.Blogs;
+
+}
+
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-item">
+                    <h2 class="breadcrumb-heading">BLOG</h2>
+                    <ul>
+                        <li>
+                            <a asp-controller="home" asp-action="index">Home</a>
+                        </li>
+                        <li>Blog Detail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="blog-area-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="blog-detail-item">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <ul>
+                                <li class="author">
+                                    <a href="">By: @Model.CreatedBy</a>
+                                </li>
+                                <li class="date">@Model.CreatedAt?.ToString("dd.MM.yyyy")</li>
+                            </ul>
+                        </div>
+                        <h2 class="title">@Model.Title</h2>
+                        <p class="short-desc">
+                            @Model.Description
+                        </p>
+                    </div>
+                    <div class="blog-img">
+                        <img src="assets/img/blog/@Model.Image" alt="" class="img-full">
+                    </div>
+                    <p class="short-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore etl dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquiex ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eukip fugiat nulla pariatur. Excepteur
+                        sint occaecat.
+                    </p>
+                    <div class="blog-banner">
+                        <div class="single-img">
+                            <img src="assets/img/blog/@Model.Image" class="img-full">
+                        </div>
+                        <div class="single-img">
+                            <img src="assets/img/blog/@Model.Image" class="img-full">
+                        </div>
+                    </div>
+                    <p class="short-desc">
+                        @Model.Description
+                    </p>
+                </div>
+                <div class="blog-comment">
+                    <h4 class="heading">Comments (03)</h4>
+                    <div class="blog-comment-item">
+                        <div class="blog-comment-img">
+                            @*<img src="assets/img/about/1-4-270x270.webp" alt="">*@
+                        </div>
+                        <div class="blog-comment-content">
+                            <div class="user-meta">
+                                <h2 class="user-name">Donald Chavez</h2>
+                                <span class="date">21 July 2021</span>
+                            </div>
+                            <p class="user-comment">
+                                Lorem ipsum dolor sit amet, consectetur adipisi elit, sed
+                                do eiusmod tempor incidid ut labore etl dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea commodo
+                                consequat.
+                            </p>
+                            <a class="comment-btn" href="">Reply</a>
+                        </div>
+                    </div>
+                    <div class="blog-comment-item">
+                        <div class="blog-comment-img">
+                            <img src="assets/img/about/@Model.Image" alt="">
+                        </div>
+                        <div class="blog-comment-content">
+                            <div class="user-meta">
+                                <h2 class="user-name">Donald Chavez</h2>
+                                <span class="date">21 July 2021</span>
+                            </div>
+                            <p class="user-comment">
+                                Lorem ipsum dolor sit amet, consectetur adipisi elit, sed
+                                do eiusmod tempor incidid ut labore etl dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea commodo
+                                consequat.
+                            </p>
+                            <a class="comment-btn" href="">Reply</a>
+                        </div>
+                    </div>
+                    <div class="blog-comment-item">
+                        <div class="blog-comment-img">
+                            <img src="assets/img/about/@Model.Image" alt="">
+                        </div>
+                        <div class="blog-comment-content">
+                            <div class="user-meta">
+                                <h2 class="user-name">Donald Chavez</h2>
+                                <span class="date">21 July 2021</span>
+                            </div>
+                            <p class="user-comment">
+                                Lorem ipsum dolor sit amet, consectetur adipisi elit, sed
+                                do eiusmod tempor incidid ut labore etl dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea commodo
+                                consequat.
+                            </p>
+                            <a class="comment-btn" href="">Reply</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-area">
+                    <h2 class="heading">Leave a comment</h2>
+                    <form class="feedback-form" action="">
+                        <div class="group-input">
+                            <div class="form-field">
+                                <input type="text" name="name" placeholder="Your Name" class="input-field">
+                            </div>
+                            <div class="form-field">
+                                <input type="text" name="email" placeholder="Your Email" class="input-field">
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" name="subject" placeholder="Subject (Optinal)" class="input-field">
+                        </div>
+                        <div class="form-field">
+                            <textarea name="message" placeholder="Message" class="textarea-field"></textarea>
+                        </div>
+                        <div class="button-wrap">
+                            <button type="submit" value="submit" name="submit" class="btn-pronia-primary">Post Comment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="sidebar-area">
+                    <div class="widgets-searchbox">
+                        <form id="widgets-searchbox" action="">
+                            <input type="text" class="input-field" placeholder="Search">
+                            <button class="widgets-searchbox-btn" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="widgets-area">
+                        <div class="widgets-item">
+                            <h2 class="widgets-title">Categories</h2>
+                            <ul class="widgets-category mt-4">
+                                <li>
+                                    <a href="">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        All
+                                        <span>(65)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Bansai
+                                        <span>(12)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        House Plants
+                                        <span>(22)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Indoor Living
+                                        <span>(19)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Perennnials
+                                        <span>(17)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Plant For Gift
+                                        <span>(01)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        Garden Tools
+                                        <span>(12)</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="widgets-item">
+                            <h2 class="widgets-title">Recent Posts</h2>
+                            <ul class="recent-posts-inner">
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-detail.html"><img src="assets/img/blog/1-1-310x220.webp" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">24 April 2021</span>
+                                        <h6 class="recent-posts-title"><a href="blog-detail.html">Lorem ipsum dolo conse tetur</a></h6>
+                                    </div>
+                                </li>
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-detail.html"><img src="assets/img/blog/1-2-310x220.webp" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">24 April 2021</span>
+                                        <h6 class="recent-posts-title"><a href="blog-detail.html">Lorem ipsum dolo conse tetur</a></h6>
+                                    </div>
+                                </li>
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-detail.html"><img src="assets/img/blog/1-3-310x220.webp" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">24 April 2021</span>
+                                        <h6 class="recent-posts-title"><a href="blog-detail.html">Lorem ipsum dolo conse tetur</a></h6>
+                                    </div>
+                                </li>
+                                <li class="recent-posts">
+                                    <div class="recent-posts-image">
+                                        <a href="blog-detail.html"><img src="assets/img/blog/1-1-310x220.webp" alt="post thumb"></a>
+                                    </div>
+                                    <div class="recent-posts-body">
+                                        <span class="recent-posts-meta">24 April 2021</span>
+                                        <h6 class="recent-posts-title"><a href="blog-detail.html">Lorem ipsum dolo conse tetur</a></h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

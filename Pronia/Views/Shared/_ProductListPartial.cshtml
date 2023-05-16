@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Product>
+
+
+<div class="product-item-wrap row">
+    @for (int i = 0; i < (int)Math.Ceiling((decimal)Model.Count() / 2); i++)
+    {
+        <div class="col-lg-3 col-sm-6">
+            @foreach (Product product in Model.Skip(i * 2).Take(2))
+            {
+                <div class="product-item">
+                    <div class="product-img">
+                        <a href="shop.html">
+                            <img class="primary-img" src="/assets/img/product/@product.MainImage" alt="" />
+                            <img class="secondary-img" src="/assets/img/product/@product.HoverImage" alt="" />
+                        </a>
+                        <div class="product-add-action">
+                            <ul class="product-action">
+                                <li>
+                                    <a class="addToWishList" asp-controller="wishlist" asp-action="AddWishList" asp-route-id="@product.Id">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="productModal" asp-action="ProductModal" asp-controller="Product" asp-route-id="@product.Id">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="addToBasket" data-id="@product.Id" href="cart.html">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <a class="product-name" href="shop.html">@product.Title</a>
+                        <div class="price-box">
+                            <span class="new-price">$@product.Price</span>
+                        </div>
+                        <div class="rating-box">
+                            <ul class="rating">
+                                <li>
+                                    <i class="fa-solid fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-star"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
