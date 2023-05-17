@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nermin\\Desktop\\Pronia-main\\Pronia\\Pronia.csproj": {}
+    "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\Pronia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nermin\\Desktop\\Pronia-main\\Pronia\\Pronia.csproj": {
+    "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\Pronia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nermin\\Desktop\\Pronia-main\\Pronia\\Pronia.csproj",
+        "projectUniqueName": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\Pronia.csproj",
         "projectName": "Pronia",
-        "projectPath": "C:\\Users\\Nermin\\Desktop\\Pronia-main\\Pronia\\Pronia.csproj",
+        "projectPath": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\Pronia.csproj",
         "packagesPath": "C:\\Users\\Nermin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nermin\\Desktop\\Pronia-main\\Pronia\\obj\\",
+        "outputPath": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

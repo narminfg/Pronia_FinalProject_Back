@@ -9,205 +9,205 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Pronia
 build_property.RootNamespace = Pronia
-build_property.ProjectDir = C:\Users\Nermin\Desktop\Pronia-main\Pronia\
+build_property.ProjectDir = C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Nermin\Desktop\Pronia-main\Pronia
+build_property.MSBuildProjectDirectory = C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Account/Login.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEFjY291bnRcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Account/Profile.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEFjY291bnRcUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Category/Create.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Category/Delete.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Category/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Category/Detail.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Category/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Category/Index.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Category/Update.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Category/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Dashboard/Index.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Order/Detail.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Order/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE9yZGVyXERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Order/Index.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE9yZGVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Product/Create.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFByb2R1Y3RcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Product/Delete.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Product/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFByb2R1Y3RcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Product/Detail.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Product/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFByb2R1Y3RcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Product/Index.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFByb2R1Y3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Product/Update.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Product/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFByb2R1Y3RcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Shared/_Layout.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Shared/_ProductImagePartial.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Shared/_ProductImagePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxfUHJvZHVjdEltYWdlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/Shared/_Validation.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/Shared/_Validation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxfVmFsaWRhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/_ViewImports.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Areas/Manage/Views/_ViewStart.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Areas/Manage/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/About/Index.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Account/Login.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Account/Profile.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Account/Register.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Basket/ViewCart.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Basket/ViewCart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XFZpZXdDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Blog/Detail.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Blog/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Blog/Index.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Blog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Contact/Index.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Home/Index.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Order/Checkout.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Order/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Product/Detail.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Product/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Product/Index.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_AcconutUpdatePartial.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_AcconutUpdatePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BY2NvbnV0VXBkYXRlUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_AddressFormPartial.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_AddressFormPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZGRyZXNzRm9ybVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_AddReviewPartial.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_AddReviewPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZGRSZXZpZXdQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_BasketPartial.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_BasketPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CYXNrZXRQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_CartPartial.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_CartPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXJ0UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_CheckoutPartial.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_CheckoutPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DaGVja291dFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_Layout.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_ModalPartial.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_ModalPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Nb2RhbFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_ProductListPartial.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_ProductListPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9kdWN0TGlzdFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_SearchPartial.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_SearchPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TZWFyY2hQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_ShopProductListPartial.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_ShopProductListPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaG9wUHJvZHVjdExpc3RQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_Validation.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_Validation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shared/_WishListPartial.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shared/_WishListPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9XaXNoTGlzdFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/Shop/Index.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/Shop/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/WishList/Index.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/WishList/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaExpc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/_ViewImports.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nermin/Desktop/Pronia-main/Pronia/Views/_ViewStart.cshtml]
+[C:/Users/Nermin/Desktop/Git Final Repo/Pronia_FinalProject_Back/Pronia/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

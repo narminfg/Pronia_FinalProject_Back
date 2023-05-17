@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6TLaXh1tdIzpE6dGnTqezL6BhW5id0z+f6Os6WagPUSXSBquGxhIUt2Pdjd326wgWWYX/DrUBw9M36bu8OuqWA==",
+  "dgSpecHash": "fgpXOLMkADv8GfHvHp7L+ILBdsnfXGlhOZjk7GmO3cz+oWrpQHdA2fxv22E9HHuHovECl65M5tspeBt2iKCUuw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nermin\\Desktop\\Pronia-main\\Pronia\\Pronia.csproj",
+  "projectFilePath": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\Pronia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nermin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Nermin\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
