@@ -72,15 +72,8 @@
                 </div>
                 <p class="short-desc">@Model.Description</p>
                 <ul class="quantity-with-btn">
-                    <li class="product-quantity">
-                        <div class="number">
-                            <span data-id="@Model.Id" class="minus-btn">-</span>
-                            <input class="countİnpForProduct" type="text" value=@Model.Count />
-                            <span data-id="@Model.Id" class="plus-btn">+</span>
-                        </div>
-                    </li>
                     <li class="add-to-cart">
-                        <a asp-action="viewcart" asp-controller="Basket" asp-route-id="@Model.Id" class="btn btn-custom-size addToBasket">Add to cart</a>
+                        <a @*asp-action="viewcart" asp-controller="Basket"*@ data-id="@Model.Id" class="btn btn-custom-size addToBasket">Add to cart</a>
                     </li>
                     <li class="wishlist-btn-wrap">
                         <a asp-controller="wishlist" asp-action="AddWishList" asp-route-id="@Model.Id" class="custom-circle-btn addToWishList">

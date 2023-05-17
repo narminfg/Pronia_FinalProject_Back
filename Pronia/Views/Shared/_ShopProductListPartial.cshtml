@@ -15,12 +15,12 @@
                 </div>
                 <div class="widgets-area">
                     <div class="widgets-item">
-                        <h2 class="widgets-title">Categories</h2>
+                        <h2 class="widgets-title" style="cursor:pointer;">Categories</h2>
                         <ul class="widgets-category mt-4">
                             @foreach(Category category in Model.Categories)
                             {
                                 <li>
-                                    <a class="catogoryfilter" data-categoryId="@category.Id" data-pageIndexId="@ViewBag.PageIndex" data-priceRange="@ViewBag.Range">
+                                    <a class="catogoryfilter" style="cursor:pointer;" data-categoryId="@category.Id" data-pageIndexId="@ViewBag.PageIndex" data-priceRange="@ViewBag.Range">
                                         <i class="fa-solid fa-chevron-right"></i>
                                         @category.Name
                                         <span>(@category.Products.Count())</span>
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="widgets-item">
-                        <h2 class="widgets-title">Color</h2>
+                        <h2 class="widgets-title" style="cursor:pointer;">Color</h2>
                         <ul class="widgets-color">
                             <li>
                                 <a href=""><i class="fa-solid fa-chevron-right"></i> All<span>(65)</span></a>
@@ -54,7 +54,7 @@
                         </ul>
                     </div>
                     <div class="widgets-item widgets-filter">
-                        <h2 class="widgets-title">Price Filter</h2>
+                        <h2 class="widgets-title" style="cursor:pointer;">Price Filter</h2>
                         <div class="wrapper">
                             <fieldset class="filter-price">
 
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <div class="widgets-item">
-                        <h2 class="widgets-title">Size</h2>
+                        <h2 class="widgets-title" style="cursor:pointer;">Size</h2>
                         <ul class="widgets-size">
                             <li>
                                 <a href="#">

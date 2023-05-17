@@ -3713,6 +3713,7 @@ ul {
     float: left;
     height: 46px;
     padding: 0 10px;
+    margin-top:-10px;
 }
 
     .rate:not(:checked) > input {
@@ -3740,7 +3741,7 @@ ul {
 
     .rate:not(:checked) > label:hover,
     .rate:not(:checked) > label:hover ~ label {
-        color: #deb217;
+        color: #ffe24d;
     }
 
     .rate > input:checked + label:hover,

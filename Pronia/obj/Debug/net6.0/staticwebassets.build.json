@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hT2Dqwcy416r1I3YjNSrT5Q0dJFzrJIBu0uaZcgo/qM=",
+  "Hash": "+UHmOp0Ah0hxObCPXSe3SfLSndlFthZAyx1bSkgG97c=",
   "Source": "Pronia",
   "BasePath": "_content/Pronia",
   "Mode": "Default",
@@ -1035,6 +1035,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\custom.js"
+    },
+    {
+      "Identity": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\wwwroot\\assets\\video\\DIY _ 1 MINUTE HANGING PLANTER - QUICK AND EASY _ HANGING POT WITH ROPE.mp4",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\wwwroot\\",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "assets/video/DIY _ 1 MINUTE HANGING PLANTER - QUICK AND EASY _ HANGING POT WITH ROPE.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\video\\DIY _ 1 MINUTE HANGING PLANTER - QUICK AND EASY _ HANGING POT WITH ROPE.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\wwwroot\\assets\\video\\Easy cement pottery making __ Cement flower vase - Cement planter Making.mp4",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\wwwroot\\",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "assets/video/Easy cement pottery making __ Cement flower vase - Cement planter Making.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\video\\Easy cement pottery making __ Cement flower vase - Cement planter Making.mp4"
     },
     {
       "Identity": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\wwwroot\\manage\\css\\nucleo-icons.css",

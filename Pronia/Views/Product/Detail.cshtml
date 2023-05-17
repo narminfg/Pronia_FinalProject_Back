@@ -5,22 +5,22 @@
 }
 
 <div class="breadcrumb-area">
-      <div class="container">
+    <div class="container">
         <div class="row">
-          <div class="col-lg-12">
-            <div class="breadcrumb-item">
-              <h2 class="breadcrumb-heading">SINGLE PRODUCT</h2>
-              <ul>
-                <li>
-                  <a asp-controller="home" asp-action="index">Home</a>
-                </li>
-                <li>Single Product variable</li>
-              </ul>
+            <div class="col-lg-12">
+                <div class="breadcrumb-item">
+                    <h2 class="breadcrumb-heading">SINGLE PRODUCT</h2>
+                    <ul>
+                        <li>
+                            <a asp-controller="home" asp-action="index">Home</a>
+                        </li>
+                        <li>Single Product variable</li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+</div>
 <div class="single-product-area">
     <div class="container">
         <div class="row d-flex">
@@ -46,14 +46,11 @@
 
                         }
 
-
-
-
                     </div>
+                </div>
+
             </div>
-            
-        </div>
-        <div class="col-lg-6">
+            <div class="col-lg-6">
                 <div class="single-product-content">
                     <h2 class="title">American Marigold</h2>
                     <div class="price-box">
@@ -62,25 +59,14 @@
                     <div class="rating-box-wrap">
                         <div class="rating-box">
                             <ul>
-                                <li>
-                                    <i class="fa-solid fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-star"></i>
-                                </li>
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    <li><i style="color: #ffe24d;" class="@(i <= (@Model.Product.Reviews.Sum(r => r.Start) / @Model.Product.Reviews.Count()) ? "fas":"far") fa-star"></i></li>
+                                }
                             </ul>
                         </div>
                         <div class="review-status">
-                            <a href="">( 1 Review )</a>
+                            <a href="">( @Model.Product.Reviews.Count() Review )</a>
                         </div>
                     </div>
                     <div class="selector-wrap color-option">
@@ -107,18 +93,18 @@
                         in reprehenderit in voluptate
                     </p>
                     <ul class="quantity-with-btn">
-                        <li class="product-quantity">
-                            <div class="number">
-                                <span class="minus">-</span>
-                                <input type="text" value="1" />
-                                <span class="plus">+</span>
-                            </div>
-                        </li>
+                        @*<li class="product-quantity">
+                        <div class="number">
+                        <span class="minus">-</span>
+                        <input type="text" value="1" />
+                        <span class="plus">+</span>
+                        </div>
+                        </li>*@
                         <li class="add-to-cart">
-                            <a href="cart.html" class="btn btn-custom-size">Add to cart</a>
+                            <a data-id="@Model.Product.Id" class="btn btn-custom-size addToBasket" style="margin-left:10px;">Add to cart</a>
                         </li>
                         <li class="wishlist-btn-wrap">
-                            <a href="wishlist.html" class="custom-circle-btn">
+                            <a asp-controller="wishlist" asp-action="AddWishList" asp-route-id="@Model.Product.Id" class="custom-circle-btn addToWishList">
                                 <i class="fa-regular fa-heart"></i>
                             </a>
                         </li>
@@ -207,883 +193,900 @@
                     </div>
                 </div>
             </div>
+        </div>
+
     </div>
 
-</div>
 
-
-<div class="product-tab-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="information-tab" data-bs-toggle="tab"
-                           data-bs-target="#information-tab-pane" role="tab" aria-controls="information-tab-pane"
-                           aria-selected="true">Information</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="description-tab" data-bs-toggle="tab" data-bs-target="#description-tab-pane"
-                           role="tab" aria-controls="description-tab-pane" aria-selected="false">Description</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review-tab-pane" role="tab"
-                           aria-controls="review-tab-pane" aria-selected="false">Reviews(3)</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="information-tab-pane" role="tabpanel"
-                         aria-labelledby="information-tab" tabindex="0">
-                        <div class="product-information-body">
-                            <h4 class="title">Shipping</h4>
-                            <p class="short-desc">
-                                The item will be shipped from China. So it need 15-20 days to
-                                deliver. Our product is good with reasonable price and we believe you will worth it.
-                                So please wait for it patiently! Thanks.Any question please kindly to contact us and
-                                we promise to work hard to help you to solve the problem
-                            </p>
-                            <h4 class="title">About return request</h4>
-                            <p class="short-desc">
-                                If you don't need the item with worry, you can contact us
-                                then we will help you to solve the problem, so please close the return request!
-                                Thanks
-                            </p>
-                            <h4 class="title">Guarantee</h4>
-                            <p class="short-desc">
-                                If it is the quality question, we will resend or refund to
-                                you; If you receive damaged or wrong items, please contact us and attach some
-                                pictures about product, we will exchange a new correct item to you after the
-                                confirmation.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="description-tab-pane" role="tabpanel" aria-labelledby="description-tab"
-                         tabindex="0">
-                        <div class="product-description-body">
-                            <p class="short-desc">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                                do eiusmod tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste
-                                natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
-                                sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                                fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
-                                nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="review-tab-pane" role="tabpanel" aria-labelledby="review-tab" tabindex="0">
-                        <div class="product-review-body">
-                            <div class="blog-comment">
-                                <h4 class="heading">Comments (03)</h4>
-                                <div class="blog-comment-item">
-                                    <div class="blog-comment-img">
-                                        <img src="assets/img/about/1-4-270x270.webp" alt="">
-                                    </div>
-                                    <div class="blog-comment-content">
-                                        <div class="user-meta">
-                                            <h2 class="user-name">Donald Chavez</h2>
-                                            <span class="date">21 July 2021</span>
-                                        </div>
-                                        <p class="user-comment">
-                                            Lorem ipsum dolor sit amet, consectetur adipisi elit, sed
-                                            do eiusmod tempor incidid ut labore etl dolore magna aliqua. Ut enim ad minim
-                                            veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea commodo
-                                            consequat.
-                                        </p>
-                                        <a class="comment-btn" href="">Reply</a>
-                                    </div>
-                                </div>
-                                <div class="blog-comment-item">
-                                    <div class="blog-comment-img">
-                                        <img src="assets/img/about/1-1-270x270.webp" alt="">
-                                    </div>
-                                    <div class="blog-comment-content">
-                                        <div class="user-meta">
-                                            <h2 class="user-name">Donald Chavez</h2>
-                                            <span class="date">21 July 2021</span>
-                                        </div>
-                                        <p class="user-comment">
-                                            Lorem ipsum dolor sit amet, consectetur adipisi elit, sed
-                                            do eiusmod tempor incidid ut labore etl dolore magna aliqua. Ut enim ad minim
-                                            veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea commodo
-                                            consequat.
-                                        </p>
-                                        <a class="comment-btn" href="">Reply</a>
-                                    </div>
-                                </div>
-                                <div class="blog-comment-item">
-                                    <div class="blog-comment-img">
-                                        <img src="assets/img/about/1-3-270x270.webp" alt="">
-                                    </div>
-                                    <div class="blog-comment-content">
-                                        <div class="user-meta">
-                                            <h2 class="user-name">Donald Chavez</h2>
-                                            <span class="date">21 July 2021</span>
-                                        </div>
-                                        <p class="user-comment">
-                                            Lorem ipsum dolor sit amet, consectetur adipisi elit, sed
-                                            do eiusmod tempor incidid ut labore etl dolore magna aliqua. Ut enim ad minim
-                                            veniam, quis nostrud exercitati ullamco laboris nisi ut aliquiex ea commodo
-                                            consequat.
-                                        </p>
-                                        <a class="comment-btn" href="">Reply</a>
-                                    </div>
-                                </div>
+    <div class="product-tab-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="information-tab" data-bs-toggle="tab"
+                               data-bs-target="#information-tab-pane" role="tab" aria-controls="information-tab-pane"
+                               aria-selected="true">Information</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="description-tab" data-bs-toggle="tab" data-bs-target="#description-tab-pane"
+                               role="tab" aria-controls="description-tab-pane" aria-selected="false">Description</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review-tab-pane" role="tab"
+                               aria-controls="review-tab-pane" aria-selected="false">Reviews(@Model.Product.Reviews.Count())</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="information-tab-pane" role="tabpanel"
+                             aria-labelledby="information-tab" tabindex="0">
+                            <div class="product-information-body">
+                                <h4 class="title">Shipping</h4>
+                                <p class="short-desc">
+                                    The item will be shipped from China. So it need 15-20 days to
+                                    deliver. Our product is good with reasonable price and we believe you will worth it.
+                                    So please wait for it patiently! Thanks.Any question please kindly to contact us and
+                                    we promise to work hard to help you to solve the problem
+                                </p>
+                                <h4 class="title">About return request</h4>
+                                <p class="short-desc">
+                                    If you don't need the item with worry, you can contact us
+                                    then we will help you to solve the problem, so please close the return request!
+                                    Thanks
+                                </p>
+                                <h4 class="title">Guarantee</h4>
+                                <p class="short-desc">
+                                    If it is the quality question, we will resend or refund to
+                                    you; If you receive damaged or wrong items, please contact us and attach some
+                                    pictures about product, we will exchange a new correct item to you after the
+                                    confirmation.
+                                </p>
                             </div>
-                            <div class="feedback-area">
-                                <h2 class="heading">Leave a comment</h2>
-                                    @await Html.PartialAsync("_AddReviewPartial")
-                            </div>  
+                        </div>
+                        <div class="tab-pane fade" id="description-tab-pane" role="tabpanel" aria-labelledby="description-tab"
+                             tabindex="0">
+                            <div class="product-description-body">
+                                <p class="short-desc">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                                    do eiusmod tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste
+                                    natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                                    sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+                                    nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="review-tab-pane" role="tabpanel" aria-labelledby="review-tab" tabindex="0">
+                            <div class="product-review-body">
+                                <div class="blog-comment">
+                                    <h4 style="margin-bottom:16px; " class="heading">Comments (@Model.Product.Reviews.Count())</h4>
+                                    <h4 style="font-size:20px;" class="rating-overall">@(@Model.Product.Reviews.Sum(r => r.Start) / @Model.Product.Reviews.Count()) <span>(Overall)</span></h4>
+                                    
+                                    <div style="margin-left:-30px; margin-bottom: 40px;" class="rating-list d-flex flex-wrap">
+                                        <div style="margin-left:30px;" class="single-rating">
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <span>(@Model.Product.Reviews.Where(r=>r.Start == 5).Count())</span>
+                                        </div>
+                                        <div style="margin-left:30px;" class="single-rating">
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="fa fa-star"></i>
+                                            <i style="color: #ffe24d;" class="far fa-star"></i>
+                                            <span>(@Model.Product.Reviews.Where(r=>r.Start == 4).Count())</span>
+                                        </div>
+                                        <div style="margin-left:30px;" class="single-rating">
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="far fa-star"></i>
+                                            <i style="color: #ffe24d;" class="far fa-star"></i>
+                                            <span>(@Model.Product.Reviews.Where(r=>r.Start == 3).Count())</span>
+                                        </div>
+                                        <div style="margin-left:30px;" class="single-rating">
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="far fa-star"></i>
+                                            <i style="color: #ffe24d;" class="far fa-star"></i>
+                                            <i style="color: #ffe24d;" class="far fa-star"></i>
+                                            <span>(@Model.Product.Reviews.Where(r=>r.Start == 2).Count())</span>
+                                        </div>
+                                        <div style="margin-left:30px;" class="single-rating">
+                                            <i style="color: #ffe24d;" class="fas fa-star"></i>
+                                            <i style="color: #ffe24d;" class="far fa-star"></i>
+                                            <i style="color: #ffe24d;" class="far fa-star"></i>
+                                            <i style="color: #ffe24d;" class="far fa-star"></i>
+                                            <i style="color: #ffe24d;" class="far fa-star"></i>
+                                            <span>(@Model.Product.Reviews.Where(r=>r.Start == 1).Count())</span>
+                                        </div>
+                                    </div>
+                                    @if (Model.Product.Reviews != null && Model.Product.Reviews.Count() > 0)
+                                    {
+                                        foreach (Review review in Model.Product.Reviews)
+                                        {
+                                            <div class="single-rating-item">
+                                                <div class="rating-author d-flex flex-wrap">
+                                                    <h4 style="font-size: 20px;" class="author-name">@review.Name</h4>
+                                                    <ul class="rating-star">
+                                                        @for (int i = 1; i <= 5; i++)
+                                                        {
+                                                            <li><i style="color: #ffe24d;    margin-left: 5px;" class="@(i <= review.Start ? "fas":"far") fa-star"></i></li>
+                                                        }
+                                                        <li><span>(@review.Start)</span></li>
+                                                    </ul>
+                                                </div>
+                                                <p>@review.Description</p>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                                
+
+                                
+                                @if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
+                                {
+                                    <div class="feedback-area">
+                                        <h2 class="heading">Leave a comment</h2>
+                                        @await Html.PartialAsync("_AddReviewPartial",Model.Review)
+                                    </div>
+                                }
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="newproduct-area">
-    <div class="container">
-        <div class="row">
-            <div class="section-title-wrap">
-                <h2 class="section-title">RELATED PRODUCTS</h2>
-                <p class="section-desc">
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It
-                    has roots <br> in a piece of classical Latin literature
-                </p>
-            </div>
-            <div class="col-12">
-                <div class="container">
-                    <div class="owl-carousel">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="shop.html">
-                                    <img class="primary-img" src="/assets/img/product/1-9-270x300.webp" alt="" />
-                                    <img class="secondary-img" src="/assets/img/product/1-10-270x300.webp" alt="" />
-                                </a>
-                                <div class="product-add-action">
-                                    <ul class="product-action">
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="productModal" href="#">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+    <div class="newproduct-area">
+        <div class="container">
+            <div class="row">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">RELATED PRODUCTS</h2>
+                    <p class="section-desc">
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It
+                        has roots <br> in a piece of classical Latin literature
+                    </p>
+                </div>
+                <div class="col-12">
+                    <div class="container">
+                        <div class="owl-carousel">
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop.html">
+                                        <img class="primary-img" src="/assets/img/product/1-9-270x300.webp" alt="" />
+                                        <img class="secondary-img" src="/assets/img/product/1-10-270x300.webp" alt="" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul class="product-action">
+                                            <li>
+                                                <a href="wishlist.html">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="productModal" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <a class="product-name" href="shop.html">American Marigold</a>
+                                    <div class="price-box">
+                                        <span class="new-price">$23.45</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="product-content">
-                                <a class="product-name" href="shop.html">American Marigold</a>
-                                <div class="price-box">
-                                    <span class="new-price">$23.45</span>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop.html">
+                                        <img class="primary-img" src="/assets/img/product/1-10-270x300.webp" alt="" />
+                                        <img class="secondary-img" src="/assets/img/product/1-11-270x300.webp" alt="" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul class="product-action">
+                                            <li>
+                                                <a href="wishlist.html">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="productModal" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                    </ul>
+                                <div class="product-content">
+                                    <a class="product-name" href="shop.html">Black Eyed Susan</a>
+                                    <div class="price-box">
+                                        <span class="new-price">$25.45</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop.html">
+                                        <img class="primary-img" src="/assets/img/product/1-11-270x300.webp" alt="" />
+                                        <img class="secondary-img" src="/assets/img/product/1-4-270x300.webp" alt="" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul class="product-action">
+                                            <li>
+                                                <a href="wishlist.html">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="productModal" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <a class="product-name" href="shop.html">Bleeding Heart</a>
+                                    <div class="price-box">
+                                        <span class="new-price">$30.45</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop.html">
+                                        <img class="primary-img" src="/assets/img/product/1-7-270x300.webp" alt="" />
+                                        <img class="secondary-img" src="/assets/img/product/1-8-270x300.webp" alt="" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul class="product-action">
+                                            <li>
+                                                <a href="wishlist.html">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="productModal" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <a class="product-name" href="shop.html">Bloody Cranesbill</a>
+                                    <div class="price-box">
+                                        <span class="new-price">$45.00</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop.html">
+                                        <img class="primary-img" src="/assets/img/product/1-9-270x300.webp" alt="" />
+                                        <img class="secondary-img" src="/assets/img/product/1-10-270x300.webp" alt="" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul class="product-action">
+                                            <li>
+                                                <a href="wishlist.html">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="productModal" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <a class="product-name" href="shop.html">American Marigold</a>
+                                    <div class="price-box">
+                                        <span class="new-price">$23.45</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop.html">
+                                        <img class="primary-img" src="/assets/img/product/1-10-270x300.webp" alt="" />
+                                        <img class="secondary-img" src="/assets/img/product/1-11-270x300.webp" alt="" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul class="product-action">
+                                            <li>
+                                                <a href="wishlist.html">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="productModal" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <a class="product-name" href="shop.html">Black Eyed Susan</a>
+                                    <div class="price-box">
+                                        <span class="new-price">$25.45</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop.html">
+                                        <img class="primary-img" src="/assets/img/product/1-11-270x300.webp" alt="" />
+                                        <img class="secondary-img" src="/assets/img/product/1-4-270x300.webp" alt="" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul class="product-action">
+                                            <li>
+                                                <a href="wishlist.html">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="productModal" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <a class="product-name" href="shop.html">Bleeding Heart</a>
+                                    <div class="price-box">
+                                        <span class="new-price">$30.45</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop.html">
+                                        <img class="primary-img" src="/assets/img/product/1-7-270x300.webp" alt="" />
+                                        <img class="secondary-img" src="/assets/img/product/1-8-270x300.webp" alt="" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul class="product-action">
+                                            <li>
+                                                <a href="wishlist.html">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="productModal" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <a class="product-name" href="shop.html">Bloody Cranesbill</a>
+                                    <div class="price-box">
+                                        <span class="new-price">$45.00</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop.html">
+                                        <img class="primary-img" src="/assets/img/product/1-9-270x300.webp" alt="" />
+                                        <img class="secondary-img" src="/assets/img/product/1-10-270x300.webp" alt="" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul class="product-action">
+                                            <li>
+                                                <a href="wishlist.html">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="productModal" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <a class="product-name" href="shop.html">American Marigold</a>
+                                    <div class="price-box">
+                                        <span class="new-price">$23.45</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop.html">
+                                        <img class="primary-img" src="/assets/img/product/1-10-270x300.webp" alt="" />
+                                        <img class="secondary-img" src="/assets/img/product/1-11-270x300.webp" alt="" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul class="product-action">
+                                            <li>
+                                                <a href="wishlist.html">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="productModal" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <a class="product-name" href="shop.html">Black Eyed Susan</a>
+                                    <div class="price-box">
+                                        <span class="new-price">$25.45</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop.html">
+                                        <img class="primary-img" src="/assets/img/product/1-11-270x300.webp" alt="" />
+                                        <img class="secondary-img" src="/assets/img/product/1-4-270x300.webp" alt="" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul class="product-action">
+                                            <li>
+                                                <a href="wishlist.html">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="productModal" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <a class="product-name" href="shop.html">Bleeding Heart</a>
+                                    <div class="price-box">
+                                        <span class="new-price">$30.45</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop.html">
+                                        <img class="primary-img" src="/assets/img/product/1-7-270x300.webp" alt="" />
+                                        <img class="secondary-img" src="/assets/img/product/1-8-270x300.webp" alt="" />
+                                    </a>
+                                    <div class="product-add-action">
+                                        <ul class="product-action">
+                                            <li>
+                                                <a href="wishlist.html">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="productModal" href="#">
+                                                    <i class="fa-regular fa-eye"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cart.html">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <a class="product-name" href="shop.html">Bloody Cranesbill</a>
+                                    <div class="price-box">
+                                        <span class="new-price">$45.00</span>
+                                    </div>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa-solid fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="shop.html">
-                                    <img class="primary-img" src="/assets/img/product/1-10-270x300.webp" alt="" />
-                                    <img class="secondary-img" src="/assets/img/product/1-11-270x300.webp" alt="" />
-                                </a>
-                                <div class="product-add-action">
-                                    <ul class="product-action">
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="productModal" href="#">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a class="product-name" href="shop.html">Black Eyed Susan</a>
-                                <div class="price-box">
-                                    <span class="new-price">$25.45</span>
-                                </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="shop.html">
-                                    <img class="primary-img" src="/assets/img/product/1-11-270x300.webp" alt="" />
-                                    <img class="secondary-img" src="/assets/img/product/1-4-270x300.webp" alt="" />
-                                </a>
-                                <div class="product-add-action">
-                                    <ul class="product-action">
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="productModal" href="#">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a class="product-name" href="shop.html">Bleeding Heart</a>
-                                <div class="price-box">
-                                    <span class="new-price">$30.45</span>
-                                </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="shop.html">
-                                    <img class="primary-img" src="/assets/img/product/1-7-270x300.webp" alt="" />
-                                    <img class="secondary-img" src="/assets/img/product/1-8-270x300.webp" alt="" />
-                                </a>
-                                <div class="product-add-action">
-                                    <ul class="product-action">
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="productModal" href="#">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a class="product-name" href="shop.html">Bloody Cranesbill</a>
-                                <div class="price-box">
-                                    <span class="new-price">$45.00</span>
-                                </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="shop.html">
-                                    <img class="primary-img" src="/assets/img/product/1-9-270x300.webp" alt="" />
-                                    <img class="secondary-img" src="/assets/img/product/1-10-270x300.webp" alt="" />
-                                </a>
-                                <div class="product-add-action">
-                                    <ul class="product-action">
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="productModal" href="#">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a class="product-name" href="shop.html">American Marigold</a>
-                                <div class="price-box">
-                                    <span class="new-price">$23.45</span>
-                                </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="shop.html">
-                                    <img class="primary-img" src="/assets/img/product/1-10-270x300.webp" alt="" />
-                                    <img class="secondary-img" src="/assets/img/product/1-11-270x300.webp" alt="" />
-                                </a>
-                                <div class="product-add-action">
-                                    <ul class="product-action">
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="productModal" href="#">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a class="product-name" href="shop.html">Black Eyed Susan</a>
-                                <div class="price-box">
-                                    <span class="new-price">$25.45</span>
-                                </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="shop.html">
-                                    <img class="primary-img" src="/assets/img/product/1-11-270x300.webp" alt="" />
-                                    <img class="secondary-img" src="/assets/img/product/1-4-270x300.webp" alt="" />
-                                </a>
-                                <div class="product-add-action">
-                                    <ul class="product-action">
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="productModal" href="#">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a class="product-name" href="shop.html">Bleeding Heart</a>
-                                <div class="price-box">
-                                    <span class="new-price">$30.45</span>
-                                </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="shop.html">
-                                    <img class="primary-img" src="/assets/img/product/1-7-270x300.webp" alt="" />
-                                    <img class="secondary-img" src="/assets/img/product/1-8-270x300.webp" alt="" />
-                                </a>
-                                <div class="product-add-action">
-                                    <ul class="product-action">
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="productModal" href="#">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a class="product-name" href="shop.html">Bloody Cranesbill</a>
-                                <div class="price-box">
-                                    <span class="new-price">$45.00</span>
-                                </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="shop.html">
-                                    <img class="primary-img" src="/assets/img/product/1-9-270x300.webp" alt="" />
-                                    <img class="secondary-img" src="/assets/img/product/1-10-270x300.webp" alt="" />
-                                </a>
-                                <div class="product-add-action">
-                                    <ul class="product-action">
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="productModal" href="#">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a class="product-name" href="shop.html">American Marigold</a>
-                                <div class="price-box">
-                                    <span class="new-price">$23.45</span>
-                                </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="shop.html">
-                                    <img class="primary-img" src="/assets/img/product/1-10-270x300.webp" alt="" />
-                                    <img class="secondary-img" src="/assets/img/product/1-11-270x300.webp" alt="" />
-                                </a>
-                                <div class="product-add-action">
-                                    <ul class="product-action">
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="productModal" href="#">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a class="product-name" href="shop.html">Black Eyed Susan</a>
-                                <div class="price-box">
-                                    <span class="new-price">$25.45</span>
-                                </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="shop.html">
-                                    <img class="primary-img" src="/assets/img/product/1-11-270x300.webp" alt="" />
-                                    <img class="secondary-img" src="/assets/img/product/1-4-270x300.webp" alt="" />
-                                </a>
-                                <div class="product-add-action">
-                                    <ul class="product-action">
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="productModal" href="#">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a class="product-name" href="shop.html">Bleeding Heart</a>
-                                <div class="price-box">
-                                    <span class="new-price">$30.45</span>
-                                </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="shop.html">
-                                    <img class="primary-img" src="/assets/img/product/1-7-270x300.webp" alt="" />
-                                    <img class="secondary-img" src="/assets/img/product/1-8-270x300.webp" alt="" />
-                                </a>
-                                <div class="product-add-action">
-                                    <ul class="product-action">
-                                        <li>
-                                            <a href="wishlist.html">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="productModal" href="#">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="cart.html">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-content">
-                                <a class="product-name" href="shop.html">Bloody Cranesbill</a>
-                                <div class="price-box">
-                                    <span class="new-price">$45.00</span>
-                                </div>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa-solid fa-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="product-modal" class="modal">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
+                        <div id="product-modal" class="modal">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
 
-                                <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="modal-wrap row">
-                                        <div class="col-lg-6">
-                                            <div class="single-product-img">
-                                                <div class="modal-carousel">
-                                                    <div class="box">
-                                                        <a class="single-img" href="">
-                                                            <img src="assets/img/product/1-1-270x300.webp" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="box">
-                                                        <a class="single-img" href="">
-                                                            <img src="assets/img/product/1-2-270x300.webp" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="box">
-                                                        <a class="single-img" href="">
-                                                            <img src="assets/img/product/1-4-270x300.webp" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="box">
-                                                        <a class="single-img" href="">
-                                                            <img src="assets/img/product/1-5-270x300.webp" alt="">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="single-product-content">
-                                                <h2 class="title">American Marigold</h2>
-                                                <div class="price-box">
-                                                    <span class="new-price">$23.45</span>
-                                                </div>
-                                                <div class="rating-box-wrap">
-                                                    <div class="rating-box">
-                                                        <ul>
-                                                            <li>
-                                                                <i class="fa-solid fa-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa-solid fa-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa-solid fa-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa-solid fa-star"></i>
-                                                            </li>
-                                                            <li>
-                                                                <i class="fa-solid fa-star"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="review-status">
-                                                        <a href="">( 1 Review )</a>
-                                                    </div>
-                                                </div>
-                                                <div class="selector-wrap color-option">
-                                                    <span class="selector-title">Color</span>
-                                                    <select name="" id="">
-                                                        <option value="default">Black & White</option>
-                                                        <option value="blue">Blue</option>
-                                                        <option value="green">Green</option>
-                                                        <option value="red">Red</option>
-                                                    </select>
-                                                </div>
-                                                <div class="selector-wrap color-option">
-                                                    <span class="selector-title">Size</span>
-                                                    <select name="" id="">
-                                                        <option value="medium">Medium Size & Poot</option>
-                                                        <option value="large">Large Size With Poot</option>
-                                                        <option value="small">Small Size With Poot</option>
-                                                    </select>
-                                                </div>
-                                                <p class="short-desc">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempo incid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-                                                <ul class="quantity-with-btn">
-                                                    <li class="product-quantity">
-                                                        <div class="number">
-                                                            <span class="minus">-</span>
-                                                            <input type="text" value="1" />
-                                                            <span class="plus">+</span>
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="modal-wrap row">
+                                            <div class="col-lg-6">
+                                                <div class="single-product-img">
+                                                    <div class="modal-carousel">
+                                                        <div class="box">
+                                                            <a class="single-img" href="">
+                                                                <img src="assets/img/product/1-1-270x300.webp" alt="">
+                                                            </a>
                                                         </div>
-                                                    </li>
-                                                    <li class="add-to-cart">
-                                                        <a href="cart.html" class="btn btn-custom-size">Add to cart</a>
-                                                    </li>
-                                                    <li class="wishlist-btn-wrap">
-                                                        <a href="wishlist.html" class="custom-circle-btn">
-                                                            <i class="fa-regular fa-heart"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
+                                                        <div class="box">
+                                                            <a class="single-img" href="">
+                                                                <img src="assets/img/product/1-2-270x300.webp" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="box">
+                                                            <a class="single-img" href="">
+                                                                <img src="assets/img/product/1-4-270x300.webp" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="box">
+                                                            <a class="single-img" href="">
+                                                                <img src="assets/img/product/1-5-270x300.webp" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="single-product-content">
+                                                    <h2 class="title">American Marigold</h2>
+                                                    <div class="price-box">
+                                                        <span class="new-price">$23.45</span>
+                                                    </div>
+                                                    <div class="rating-box-wrap">
+                                                        <div class="rating-box">
+                                                            <ul>
+                                                                <li>
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="review-status">
+                                                            <a href="">( 1 Review )</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="selector-wrap color-option">
+                                                        <span class="selector-title">Color</span>
+                                                        <select name="" id="">
+                                                            <option value="default">Black & White</option>
+                                                            <option value="blue">Blue</option>
+                                                            <option value="green">Green</option>
+                                                            <option value="red">Red</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="selector-wrap color-option">
+                                                        <span class="selector-title">Size</span>
+                                                        <select name="" id="">
+                                                            <option value="medium">Medium Size & Poot</option>
+                                                            <option value="large">Large Size With Poot</option>
+                                                            <option value="small">Small Size With Poot</option>
+                                                        </select>
+                                                    </div>
+                                                    <p class="short-desc">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempo incid ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
+                                                    <ul class="quantity-with-btn">
+                                                        <li class="product-quantity">
+                                                            <div class="number">
+                                                                <span class="minus">-</span>
+                                                                <input type="text" value="1" />
+                                                                <span class="plus">+</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="add-to-cart">
+                                                            <a href="cart.html" class="btn btn-custom-size">Add to cart</a>
+                                                        </li>
+                                                        <li class="wishlist-btn-wrap">
+                                                            <a href="wishlist.html" class="custom-circle-btn">
+                                                                <i class="fa-regular fa-heart"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1094,6 +1097,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </div>

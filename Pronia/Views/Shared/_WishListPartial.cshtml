@@ -7,7 +7,7 @@
             <a class="removeWishList" asp-controller="wishlist" asp-action="DeleteWishList" asp-route-id="@wishListVM.Id"><i class="fa-solid fa-xmark"></i> </a>
         </td>
         <td class="product-thumbnail">
-            <a href=""><img src="/assets/img/product/@wishListVM.Image" alt="" /></a>
+            <a href=""><img src="~/assets/img/product/@wishListVM.Image" alt="" /></a>
         </td>
         <td class="product-name">
             <a href="">@wishListVM.Title</a>

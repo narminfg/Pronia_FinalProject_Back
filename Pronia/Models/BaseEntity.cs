@@ -6,7 +6,7 @@ namespace Pronia.Models
     {
         public int Id { get; set; }
         
-        public bool? IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
         [StringLength(1000)]
         public string? CreatedBy { get; set; }
         public Nullable<DateTime> CreatedAt { get; set; }

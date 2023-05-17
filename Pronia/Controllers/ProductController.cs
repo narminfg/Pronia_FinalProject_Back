@@ -32,6 +32,7 @@ namespace Pronia.Controllers
 
             Product product = await _context.Products
                 .Include(p => p.ProductImages.Where(pi => pi.IsDeleted == false))
+                .Include(p => p.Category)
                 .Include(p => p.Reviews.Where(r => r.IsDeleted == false))
                 .FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
 
@@ -52,6 +53,7 @@ namespace Pronia.Controllers
         {
             Product product = await _context.Products
                 .Include(p => p.ProductImages.Where(pi => pi.IsDeleted == false))
+                .Include(p => p.Category)
                 .Include(p => p.Reviews.Where(r => r.IsDeleted == false))
                 .FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == review.ProductId);
 
@@ -60,10 +62,11 @@ namespace Pronia.Controllers
             if (!ModelState.IsValid) return View("Detail", productReviewVM);
 
             AppUser appUser = await _userManager.FindByNameAsync(User.Identity.Name);
+            review.IsDeleted=false;
 
             if (product.Reviews != null && product.Reviews.Count() > 0 && product.Reviews.Any(r => r.UserId == appUser.Id))
             {
-                ModelState.AddModelError("Name", "Siz Artiq Fikir Bildirmisiz");
+                ModelState.AddModelError("Name", "You have already commented");
                 return View("Detail", productReviewVM);
             }
 

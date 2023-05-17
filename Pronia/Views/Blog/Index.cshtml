@@ -52,7 +52,7 @@
                                         {
                                             <div class="blog-img">
                                                 <a asp-route-id="@blog.Id" asp-controller="blog" asp-action="detail">
-                                                    <img class="img-full" src="assets/img/blog/@blog.Image" alt="">
+                                                    <img class="img-full" src="~/assets/img/blog/@blog.Image" alt="">
                                                 </a>
                                                 <div class="inner-btn-wrap">
                                                     <a asp-route-id="@blog.Id" asp-controller="blog" asp-action="detail" class="inner-btn">
@@ -63,7 +63,7 @@
                                         }
                                         else{
                                             <div class="radio">
-                                            <iframe width="560" height="315" src="@blog.Video"
+                                                <iframe width="560" height="315" src="~/assets/video/@blog.Video
                                                 title="YouTube video player" frameborder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                 allowfullscreen></iframe>
