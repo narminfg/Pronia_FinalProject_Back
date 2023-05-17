@@ -24,7 +24,7 @@
 
                         <tr>
                             <td class="product-remove">
-                                <a data-id="@basketVM.Id" class="removeProdInCart" asp-controller="basket" asp-action="DeleteCart">
+                                <a data-id="@basketVM.Id" class="removeProdInCart">
                                     <i class="fa-solid fa-xmark"></i>
                                 </a>
                             </td>
@@ -51,7 +51,6 @@
                             </td>
                         </tr>
                         totalPrice += basketVM.Count * basketVM.Price;
-
                     }
 
 

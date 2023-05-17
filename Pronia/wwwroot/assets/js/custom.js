@@ -249,15 +249,15 @@ $(document).on('click', '.minus-btn', function () {
 })
 
 
-//$(document).on('click', '.removeCard', function () {
+$(document).on('click', '.removeProdInCart', function () {
     
 
-//    let productId = $(this).attr('data-id');
-//    console.log(productId)
-//    fetch("/basket/DeleteCart?id="  productId).then(res => {
-//        return res.text();
-//    })
-//        .then(data => {
-//            $('.cart-area').html(data);
-//        })
-//})
+    let productId = $(this).attr('data-id');
+    console.log(productId)
+    fetch("/basket/DeleteCart?id="  +productId).then(res => {
+        return res.text();
+    })
+        .then(data => {
+            $('.cart-area').html(data);
+        })
+})
