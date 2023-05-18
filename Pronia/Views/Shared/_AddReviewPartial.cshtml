@@ -2,7 +2,7 @@
 <div class="rating-star d-flex">
         <span class="title">Rating:</span>
         <div class="rate">
-        <input form="reviewForm" type=" radio" id="star5" asp-for="Start" value="5" />
+        <input form="reviewForm" type="radio" id="star5" asp-for="Start" value="5" />
             <label for="star5" title="5">5 stars</label>
         <input form="reviewForm" type="radio" id="star4" asp-for="Start" value="4" />
             <label for="star4" title="4">4 stars</label>
@@ -15,18 +15,19 @@
         </div>
     </div>
 <form id="reviewForm" class="feedback-form" method="post" asp-controller="product" asp-action="AddReview">
-    <input type="hidden" name="ProductId" value="@Model.ProductId"/>
+    <input asp-for="ProductId" type="hidden" name="ProductId" value="@Model.ProductId"/>
     <div class="group-input">
         <div class="form-field">
-            <input asp-for="Name" name="name" placeholder="Your Name" class="input-field">
+            <input asp-for="Name" placeholder="Your Name" class="input-field">
         </div>
         <div class="form-field">
-            <input asp-for="Email" name="email" placeholder="Your Email" class="input-field">
+            <input asp-for="Email"placeholder="Your Email" class="input-field">
             <span asp-validation-for="Email"></span>
         </div>
     </div>
     <div class="form-field">
-        <textarea asp-for="Description" name="message" placeholder="Message" class="textarea-field"></textarea>
+        
+        <textarea asp-for="Description"  placeholder="Message" class="textarea-field"></textarea>
     </div>
     <div class="button-wrap">
         <button type="submit" value="submit" name="submit" class="btn-pronia-primary">

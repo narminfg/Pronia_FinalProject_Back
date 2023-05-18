@@ -59,10 +59,14 @@
                     <div class="rating-box-wrap">
                         <div class="rating-box">
                             <ul>
-                                @for (int i = 1; i <= 5; i++)
+                                @if (Model.Product.Reviews.Count() > 0)
+                                {
+                                     @for (int i = 1; i <= 5; i++)
                                 {
                                     <li><i style="color: #ffe24d;" class="@(i <= (@Model.Product.Reviews.Sum(r => r.Start) / @Model.Product.Reviews.Count()) ? "fas":"far") fa-star"></i></li>
                                 }
+                                }
+                               
                             </ul>
                         </div>
                         <div class="review-status">
@@ -92,16 +96,10 @@
                         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
                         in reprehenderit in voluptate
                     </p>
-                    <ul class="quantity-with-btn">
-                        @*<li class="product-quantity">
-                        <div class="number">
-                        <span class="minus">-</span>
-                        <input type="text" value="1" />
-                        <span class="plus">+</span>
-                        </div>
-                        </li>*@
+                    <ul style="margin-left:-32px;" class="quantity-with-btn">
+                        
                         <li class="add-to-cart">
-                            <a data-id="@Model.Product.Id" class="btn btn-custom-size addToBasket" style="margin-left:10px;">Add to cart</a>
+                            <a  data-id="@Model.Product.Id" class="btn btn-custom-size addToBasket">Add to cart</a>
                         </li>
                         <li class="wishlist-btn-wrap">
                             <a asp-controller="wishlist" asp-action="AddWishList" asp-route-id="@Model.Product.Id" class="custom-circle-btn addToWishList">
@@ -159,10 +157,7 @@
                         <span class="title">Categories :</span>
                         <ul>
                             <li>
-                                <a href="">Office,</a>
-                            </li>
-                            <li>
-                                <a href="">Home</a>
+                                <a href="">@Model.Product.Category.Name</a>
                             </li>
                         </ul>
                     </div>
@@ -266,8 +261,8 @@
                             <div class="product-review-body">
                                 <div class="blog-comment">
                                     <h4 style="margin-bottom:16px; " class="heading">Comments (@Model.Product.Reviews.Count())</h4>
-                                    <h4 style="font-size:20px;" class="rating-overall">@(@Model.Product.Reviews.Sum(r => r.Start) / @Model.Product.Reviews.Count()) <span>(Overall)</span></h4>
-                                    
+@*                                    <h4 style="font-size:20px;" class="rating-overall">@(Model.Product.Reviews.Count() > 0 ? (@Model.Product.Reviews.Sum(r => r.Start) / @Model.Product.Reviews.Count()) : 0) <span>(Overall)</span></h4>
+*@
                                     <div style="margin-left:-30px; margin-bottom: 40px;" class="rating-list d-flex flex-wrap">
                                         <div style="margin-left:30px;" class="single-rating">
                                             <i style="color: #ffe24d;" class="fas fa-star"></i>

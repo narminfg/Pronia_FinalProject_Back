@@ -19,7 +19,7 @@ namespace Pronia.Controllers
 
         public async Task<IActionResult> Index()
         {
-           IEnumerable<Product> Products= await _context.Products.Include(p=>p.ProductImages.Where(pi=>pi.IsDeleted==false)).Where(p=>p.IsDeleted==false).ToListAsync();
+            IEnumerable<Product> Products= await _context.Products.Include(p => p.Reviews.Where(r => r.IsDeleted == false)).Include(p=>p.ProductImages.Where(pi=>pi.IsDeleted==false)).Where(p=>p.IsDeleted==false).ToListAsync();
             IEnumerable<Category> Categories = await _context.Categories.Include(c=>c.Products.Where(p=>p.IsDeleted==false)).Where(c => c.IsDeleted == false).ToListAsync();
             ViewBag.PageIndex = 1;
             ViewBag.PageCount = (int)Math.Ceiling((decimal)Products.Count() / 3);

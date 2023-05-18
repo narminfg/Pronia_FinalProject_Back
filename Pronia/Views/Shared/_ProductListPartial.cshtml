@@ -9,7 +9,7 @@
             {
                 <div class="product-item">
                     <div class="product-img">
-                        <a href="shop.html">
+                        <a asp-controller="shop" asp-action="index">
                             <img class="primary-img" src="~/assets/img/product/@product.MainImage" alt="" />
                             <img class="secondary-img" src="~/assets/img/product/@product.HoverImage" alt="" />
                         </a>
@@ -40,21 +40,15 @@
                         </div>
                         <div class="rating-box">
                             <ul class="rating">
-                                <li>
-                                    <i class="fa-solid fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-star"></i>
-                                </li>
+                         
+                                @if (product.Reviews.Count()>0)
+                                {
+                                    @for (int y = 1; y <= 5; y++)
+                                    {
+                                        <li><i style="color: #ffe24d;" class="@(y <= (@product.Reviews.Sum(r => r.Start) / @product.Reviews.Count()) ? "fas":"far") fa-star"></i></li>
+                                    }
+                                }
+
                             </ul>
                         </div>
                     </div>

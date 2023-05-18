@@ -41,7 +41,7 @@ namespace Pronia.Controllers
             ProductReviewVM productReviewVM = new ProductReviewVM
             {
                 Product = product,
-                Review = new Review { ProductId = id },
+                Review = new Review { ProductId = id},
             };
             return View(productReviewVM);
         }
@@ -50,6 +50,7 @@ namespace Pronia.Controllers
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Member")]
         public async Task<IActionResult> AddReview(Review review)
+        
         {
             Product product = await _context.Products
                 .Include(p => p.ProductImages.Where(pi => pi.IsDeleted == false))

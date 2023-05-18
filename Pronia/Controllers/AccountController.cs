@@ -200,6 +200,7 @@ namespace Pronia.Controllers
 
             appUser.Name = profileVM.Name;
             appUser.SurName = profileVM.SurName;
+            appUser.Addresses= profileVM.Addresses;
 
             if (appUser.NormalizedUserName != profileVM.UserName.Trim().ToUpperInvariant())
             {
