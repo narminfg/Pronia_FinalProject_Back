@@ -56,8 +56,10 @@ namespace Pronia.Controllers
 
 
             IEnumerable<Product> Products = await _context.Products
+                .Include(p => p.Reviews.Where(r => r.IsDeleted == false))
                 .Include(p => p.ProductImages.Where(pi => pi.IsDeleted == false))
                 .Where(p => p.IsDeleted == false).ToListAsync();
+
 
             IEnumerable<Category> Categories = await _context.Categories.Where(c => c.IsDeleted == false).ToListAsync();
 

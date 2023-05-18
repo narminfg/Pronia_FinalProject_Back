@@ -59,7 +59,7 @@
 
         console.log(productId)
 
-        fetch('basket/addbasket?id=' + productId)
+        fetch('/basket/addbasket?id=' + productId)
             .then(res => {
                 return res.text();
             }).then(data => {
