@@ -16,12 +16,15 @@ namespace Pronia.Controllers
             _context = context;
         }
 
+        
         public IActionResult Index(int pageIndex = 1)
         {
             IQueryable<Blog> blogs = _context.Blogs.Where(b => b.IsDeleted == false);
             IEnumerable<Blog> recentBlogs = _context.Blogs.Where(b => b.IsDeleted == false).OrderByDescending(b => b.CreatedAt).Take(4);
 
             ViewBag.Blogs = recentBlogs;
+
+           
 
             return View(PageNatedList<Blog>.Create(blogs, pageIndex, 6));
 
