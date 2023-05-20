@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Pronia.Models
 {
@@ -7,9 +8,12 @@ namespace Pronia.Models
         public int Id { get; set; }
 
         [StringLength(255)]
-        public string Key { get; set; }
+        public string? Key { get; set; }
 
         [StringLength(1000)]
-        public string Value { get; set; }
+        public string? Value { get; set; }
+
+        [NotMapped]
+        public IFormFile? File { get; set; }
     }
 }

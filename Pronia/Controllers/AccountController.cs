@@ -280,6 +280,70 @@ namespace Pronia.Controllers
             return RedirectToAction(nameof(Profile));
         }
 
+        [HttpGet]
+        [Authorize]
+        public async Task<IActionResult> EditAddress(int? id)
+        {
+            if (id == null) { return NotFound(); }
+            AppUser appUser = await _userManager.Users.Include(u => u.Addresses.Where(a => a.IsDeleted == false))
+                            .FirstOrDefaultAsync(u => u.NormalizedUserName == User.Identity.Name.ToUpperInvariant());
+            Address oldAddress = appUser.Addresses.FirstOrDefault(a => a.IsDeleted == false && a.Id == id);
+            if (oldAddress == null) { return NotFound(); }
+            Address address = new Address
+            {
+                City = oldAddress.City,
+                State = oldAddress.State,
+                ZipCode = oldAddress.ZipCode,
+                Country = oldAddress.Country,
+                IsMain = oldAddress.IsMain,
+                Id = oldAddress.Id
+            };
+            TempData["Tab"] = "address";
+            return RedirectToAction(nameof(Profile), address);
+        }
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> EditAddress(Address address)
+        {
+            if (address == null || address.Id == null) { return NotFound(); }
+            AppUser user = await _userManager.Users.Include(u => u.Addresses.Where(a => a.IsDeleted == false))
+                           .FirstOrDefaultAsync(u => u.NormalizedUserName == User.Identity.Name.ToUpperInvariant());
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            Address oldAddress = user.Addresses.FirstOrDefault(a => a.IsDeleted == false && a.Id == address.Id);
+            if (oldAddress == null) { return NotFound(); }
+            bool isMain = address.IsMain;
+            if (isMain)
+            {
+                IEnumerable<Address> differentAddresses = user.Addresses.Where(a => a.Id != address.Id && a.IsDeleted ==false && a.IsMain);
+                foreach (Address differentAddress in differentAddresses)
+                {
+                    differentAddress.IsMain = false;
+                }
+            }
+
+            oldAddress.City = address.City;
+            oldAddress.State = address.State;
+            oldAddress.ZipCode = address.ZipCode;
+            oldAddress.Country = address.Country;
+            oldAddress.IsMain = address.IsMain;
+            
+
+            await _userManager.UpdateAsync(user);
+            await _context.SaveChangesAsync();
+            TempData["Tab"] = "address";
+
+
+            return RedirectToAction(nameof(Profile));
+
+
+        }
+
 
         //[HttpGet]
         //public async Task<IActionResult> CreateAdmin()

@@ -216,6 +216,12 @@
         $('.addressContainer').addClass('d-none');
         $('.addressForm').removeClass('d-none');
     })
+
+    $(document).on('click', '.editAddress', function (e) {
+        e.preventDefault();
+        $('.addressContainer').addClass('d-none');
+        $('.editAddressForm').removeClass('d-none');
+    })
 })
 
 $(document).on('click', '.plus-btn', function () {

@@ -58,58 +58,7 @@
                          tabindex="0">
                         <div class="myaccount-orders">
                             <h4 class="small title">MY ORDERS</h4>
-                           @* <div class="table-responsive">
-                                <table class="table table-condensed" style="border-collapse:collapse;">
-                                    <thead>
-                                        <tr>
-                                            <th>№</th>
-                                            <th>Date</th>
-                                            <th>Total</th>
-                                            <th>Status</th>
-                                            <th>Comment</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (Order order in Model.Orders)
-                                        {
-                                            <tr data-bs-toggle="collapse" data-target="#demo@(order.Id)" class="accordion-toggle">
-                                                <td>@order.No</td>
-                                                <td>@order.CreatedAt?.ToString("dd MMM yyyy")</td>
-                                                <td class="text-success">@(order.OrderItems.Sum(o => (o.Price * o.Count)))</td>
-                                                <td>@order.Status</td>
-                                                <td>@order.Comment</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="6" class="hiddenRow">
-                                                    <div class="accordian-body collapse" id="demo@(order.Id)">
-                                                        <table class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="name">Name</th>
-                                                                    <th class="status">Count</th>
-                                                                    <th class="total">Price</th>
-                                                                    <th class="action">Total</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                @foreach (OrderItem orderItem in order.OrderItems)
-                                                                {
-                                                                    <tr>
-                                                                        <td>@orderItem.Product.Title</td>
-                                                                        <td>@orderItem.Count</td>
-                                                                        <td>@orderItem.Price</td>
-                                                                        <td>@(orderItem.Price * orderItem.Count)</td>
-                                                                    </tr>
-                                                                }
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
-                            </div>*@
+                         
                             <div class="account-table text-center mt-30 table-responsive">
                                 <table class="table table-hover">
                                     <thead>
@@ -196,10 +145,13 @@
                                                 <p>Mobile: @address.PhoneNumber</p>
                                                 <p>IsMain:@address.IsMain </p>
                                             </address>
-                                            <a asp-controller="Account" asp-action="editAddress" asp-route-id="@address.Id" class="check-btn sqr-btn "><i class="fa fa-edit"></i> Edit Address</a>
+                                            <a asp-controller="Account" asp-action="EditAddress" asp-route-id="@address.Id" class="check-btn sqr-btn editAddress "><i class="fa fa-edit"></i> Edit Address</a>
                                         </div>
                                     }
                                 }
+                            </div>
+                            <div class="editAddressForm d-none">
+                                @await Html.PartialAsync("_EditAddressPartial",new Address())
                             </div>
                           
                         </div>

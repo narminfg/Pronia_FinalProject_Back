@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "r8v9pVKYQtUFAToYe0Ffxgt+kVZv1sac9Q9nQNDr/kc=",
+  "Hash": "LfS0y01hgjoA7pzCt6giguw+nmKaH9XEXQou5HoY4AU=",
   "Source": "Pronia",
   "BasePath": "_content/Pronia",
   "Mode": "Default",
@@ -476,12 +476,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\icon\\service.webp"
     },
     {
-      "Identity": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\wwwroot\\assets\\img\\logo\\Pronia.webp",
+      "Identity": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\wwwroot\\assets\\img\\logo\\Pronia.png",
       "SourceId": "Pronia",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\wwwroot\\",
       "BasePath": "_content/Pronia",
-      "RelativePath": "assets/img/logo/Pronia.webp",
+      "RelativePath": "assets/img/logo/Pronia.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -490,7 +490,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\logo\\Pronia.webp"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\logo\\Pronia.png"
     },
     {
       "Identity": "C:\\Users\\Nermin\\Desktop\\Git Final Repo\\Pronia_FinalProject_Back\\Pronia\\wwwroot\\assets\\img\\product\\1-10-270x300.jpg",
