@@ -200,6 +200,8 @@ ul {
 
     .header_right .offcanvas.offcanvas-end .offcanvas-body .minicart-product {
         display: flex;
+        justify-content:space-between;
+        width:100%;
         flex-wrap: wrap;
     }
 
@@ -208,7 +210,7 @@ ul {
         }
 
         .header_right .offcanvas.offcanvas-end .offcanvas-body .minicart-product .product-item-content {
-            padding: 0 10px;
+            padding: 0 10px !important;
         }
 
     .header_right .offcanvas.offcanvas-end .offcanvas-body .minicart-content .product-name {
@@ -558,10 +560,12 @@ ul {
 
             .ourproduct-area .product-item .product-img a .primary-img {
                 width: 100%;
+                height:280px !important;
             }
 
             .ourproduct-area .product-item .product-img a .secondary-img {
                 width: 100%;
+                height: 280px !important;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -801,10 +805,12 @@ ul {
 
             .newproduct-area .product-item .product-img a .primary-img {
                 width: 100%;
+                height:280px !important;
             }
 
             .newproduct-area .product-item .product-img a .secondary-img {
                 width: 100%;
+                height: 280px !important;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -1689,10 +1695,12 @@ ul {
 
         .all-products .product-item .product-img a .primary-img {
             width: 100%;
+            height:280px !important;
         }
 
         .all-products .product-item .product-img a .secondary-img {
             width: 100%;
+            height: 280px !important;
             position: absolute;
             top: 0;
             left: 0;
@@ -2760,7 +2768,7 @@ ul {
                 background-color: #f6f7fb;
                 padding-left: 20px;
                 padding-right: 20px;
-                width: 100%;
+                width: 560px;
                 height: 50px;
                 outline: none;
                 margin-left: 30px;
@@ -2783,7 +2791,7 @@ ul {
         height: 150px;
         border: 1px solid #dee2e6;
         background-color: #f6f7fb;
-        width: 96%;
+        width: 98%;
         padding-left: 20px;
         padding-right: 20px;
         margin-left: 30px;

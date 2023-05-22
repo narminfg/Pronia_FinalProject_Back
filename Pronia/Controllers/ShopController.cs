@@ -21,6 +21,7 @@ namespace Pronia.Controllers
         {
             IEnumerable<Product> Products= await _context.Products.Include(p => p.Reviews.Where(r => r.IsDeleted == false)).Include(p=>p.ProductImages.Where(pi=>pi.IsDeleted==false)).Where(p=>p.IsDeleted==false).ToListAsync();
             IEnumerable<Category> Categories = await _context.Categories.Include(c=>c.Products.Where(p=>p.IsDeleted==false)).Where(c => c.IsDeleted == false).ToListAsync();
+
             ViewBag.PageIndex = 1;
             ViewBag.PageCount = (int)Math.Ceiling((decimal)Products.Count() / 3);
             Products = Products.Take(3).ToList();
@@ -32,8 +33,6 @@ namespace Pronia.Controllers
             
             };
             
-            
-
             return View(shopVM);
         }
 
@@ -99,31 +98,6 @@ namespace Pronia.Controllers
 
 
         }
-
-
-        //public async Task<IActionResult> RangeFilter(string range = "", int pageIndex = 1)
-        //{
-
-        //    double minValue = 0;
-        //    double maxValue = 0;
-
-
-        //    range = range?.Replace("$", "");
-        //    if (!string.IsNullOrWhiteSpace(range))
-        //    {
-        //        string[] arr = range.Split(" - ");
-        //        minValue = double.Parse(arr[0]);
-        //        maxValue = double.Parse(arr[1]);
-        //    }
-        //    IEnumerable<Product> product = await _context.Products
-        //        .Where(p => p.IsDeleted == false).ToListAsync();
-
-        //    return PartialView("_ShopProductListPartial", product);
-        //}
-
-
-
-
 
     }
 }

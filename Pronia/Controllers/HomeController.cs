@@ -20,9 +20,11 @@ namespace Pronia.Controllers
             IEnumerable<Product> IsFeaturedProducts = await _context.Products.Include(p=>p.Reviews.Where(r=>r.IsDeleted==false)).Where(p => p.IsDeleted == false && p.IsFeatured).ToListAsync();
             IEnumerable<Product> BestSellerProducts = await _context.Products.Include(p => p.Reviews.Where(r => r.IsDeleted == false)).Where(p => p.IsDeleted == false && p.IsBestSeller).ToListAsync();
             IEnumerable<Product> LatestProducts = await _context.Products.Include(p => p.Reviews.Where(r => r.IsDeleted == false)).Where(p => p.IsDeleted == false && p.IsLatest).ToListAsync();
-            IsFeaturedProducts=IsFeaturedProducts.OrderByDescending(p => p.CreatedAt).Take(8);
+            IEnumerable<Product> NewProducts = await _context.Products.Include(p => p.Reviews.Where(r => r.IsDeleted == false)).Where(p => p.IsDeleted == false && p.IsLatest).ToListAsync();
+            IsFeaturedProducts =IsFeaturedProducts.OrderByDescending(p => p.CreatedAt).Take(8);
             BestSellerProducts = BestSellerProducts.OrderByDescending(p => p.CreatedAt).Take(8);
             LatestProducts=LatestProducts.OrderByDescending(p=>p.CreatedAt).Take(8);
+            NewProducts=NewProducts.OrderByDescending(p=>p.Id).ToList();
 
             HomeVM vm = new HomeVM
             {
@@ -30,7 +32,7 @@ namespace Pronia.Controllers
                 BestSeller=BestSellerProducts,
                 Latest=LatestProducts,
                 Sliders = await _context.Sliders.Where(s => s.IsDeleted == false).ToListAsync(),      
-                New = await _context.Products.Where(p => p.IsDeleted == false && p.IsNew).OrderByDescending(p=>p.Id).ToListAsync(),
+                New = NewProducts,
             };
             return View(vm);
         }

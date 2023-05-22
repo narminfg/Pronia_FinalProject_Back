@@ -56,13 +56,13 @@
             </div>
 
             <div class="mb-3">
-                <label asp-for="MainFile" class="form-label">MainImage</label>
+                <label asp-for="MainFile" class="form-label">Main Image</label>
                 <input asp-for="MainFile" class="form-control" accept="image/jpeg">
                 <span asp-validation-for="MainFile" class=" text text-danger"></span>
 
             </div>
             <div class="mb-3">
-                <label asp-for="HoverFile" class="form-label">HoverImage</label>
+                <label asp-for="HoverFile" class="form-label">Hover Image</label>
                 <input asp-for="HoverFile" class="form-control" accept="image/jpeg">
                 <span asp-validation-for="HoverFile" class=" text text-danger"></span>
 
@@ -79,7 +79,7 @@
 
             <div id="parentList">
                 <div class="input-group mb-3">
-                    <select asp-for="CategoryId" class="custom-select" asp-items="new SelectList( ViewBag.Categories,nameof(Category.Id), nameof(Category.Name))">
+                    <select style="border-radius:0.5rem; margin-top:20px;" asp-for="CategoryId" class="form-select" asp-items="new SelectList( ViewBag.Categories,nameof(Category.Id), nameof(Category.Name))">
                     </select>
                     <span asp-validation-for="CategoryId" class=" text text-danger"></span>
                 </div>

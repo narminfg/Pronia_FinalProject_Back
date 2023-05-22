@@ -15,19 +15,19 @@
 
     <div class="row">
         <div class="col-lg-4" style="width: 50rem;">
-            <div class="card mx-3">
+            <div style="width:60%;" class="card mx-3">
                 @if (Model.MainImage != null)
                 {
-                    <img class="card-img-top w-50" src="~/assets/img/product/@Model.MainImage" />
+                    <img style="margin-left:110px;" class="card-img-top w-50" src="~/assets/img/product/@Model.MainImage" />
                 }
-                <h5 class="card-title text-bg-danger text-danger">Name: @Model.Title</h5>
+                <h5 style="text-align:center;" class="card-title">@Model.Title</h5>
                 <div class="card-title text-danger text">
-                    <p style="color:black;">
+                    <p style="color:black;padding: 26px 16px;">
                         @Model.Description
                     </p>
                 </div>
                 <div class="card-title text-danger text">
-                    <p class="text-danger text-danger" style="color:black;">
+                    <p class="text-danger text-danger" style="color:black;     margin-left: 16px; margin-top: -25px;">
                         @Model.CreatedBy
                     </p>
                 </div>

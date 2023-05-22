@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MimeKit;
 using Newtonsoft.Json;
 using Pronia.DataAccessLayer;
 using Pronia.Models;
 using Pronia.ViewModels.AccountViewModels;
 using Pronia.ViewModels.BasketViewModels;
+using System.Net.Mail;
 using static NuGet.Packaging.PackagingConstants;
 
 namespace Pronia.Controllers
@@ -32,6 +34,7 @@ namespace Pronia.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task <IActionResult>Register(RegisterVM registerVM)
@@ -57,35 +60,6 @@ namespace Pronia.Controllers
             return RedirectToAction(nameof(Login));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> CreateRole()
-        {
-            await _roleManager.CreateAsync(new IdentityRole("SuperAdmin"));
-            await _roleManager.CreateAsync(new IdentityRole("Admin"));
-            await _roleManager.CreateAsync(new IdentityRole("Member"));
-            return Content("ugurlu oldu");
-        }
-
-
-        [HttpGet]
-        public async Task<IActionResult> CreateUser()
-        {
-            AppUser appUser = new AppUser
-            {
-                Name = "Super",
-                SurName = "Admin",
-                UserName = "SuperAdmin",
-                Email = "superadmin@gmail.com"
-            };
-
-            await _userManager.CreateAsync(appUser, "SuperAdmin133");
-            await _userManager.AddToRoleAsync(appUser, "SuperAdmin");
-            
-
-            return Content("Ugurlu Oldu");
-        }
-
-
 
         [HttpGet]
         public IActionResult Login()
@@ -107,7 +81,7 @@ namespace Pronia.Controllers
 
             if (appUser == null)
             {
-                ModelState.AddModelError("", "Email ve ya Sifre yanlisdir");
+                ModelState.AddModelError("", "Email or Password is wrong");
                 return View(loginVM);
             }
 
@@ -116,13 +90,13 @@ namespace Pronia.Controllers
 
             if (signInResult.IsLockedOut)
             {
-                ModelState.AddModelError("", "Hesabiniz Bloklanib");
+                ModelState.AddModelError("", "Your account is blocked");
                 return View(loginVM);
             }
 
             if (!signInResult.Succeeded)
             {
-                ModelState.AddModelError("", "Email ve ya Sifre yanlisdir");
+                ModelState.AddModelError("", "Email or Password is wrong");
                 return View(loginVM);
             }
             string basket = HttpContext.Request.Cookies["basket"];
@@ -168,6 +142,7 @@ namespace Pronia.Controllers
 
             return RedirectToAction(nameof(Login));
         }
+
         [HttpGet]
         [Authorize(Roles = "Member")]
         public async Task<IActionResult> Profile()
@@ -224,7 +199,7 @@ namespace Pronia.Controllers
             {
                 if (!await _userManager.CheckPasswordAsync(appUser, profileVM.OldPassword))
                 {
-                    ModelState.AddModelError("OldPassword", "Sifre Yanlisir !");
+                    ModelState.AddModelError("OldPassword", "Password is wrong !");
                     return View(profileVM);
                 }
                 string token = await _userManager.GeneratePasswordResetTokenAsync(appUser);
@@ -301,6 +276,7 @@ namespace Pronia.Controllers
             TempData["Tab"] = "address";
             return RedirectToAction(nameof(Profile), address);
         }
+
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
@@ -359,6 +335,34 @@ namespace Pronia.Controllers
         //    await _userManager.CreateAsync(appUser,"SuperAdmin123");
         //    await _userManager.AddToRoleAsync(appUser, "SuperAdmin");
         //    return Content("Ugurlu oldu");
+        //}
+
+        //[HttpGet]
+        //public async Task<IActionResult> CreateRole()
+        //{
+        //    await _roleManager.CreateAsync(new IdentityRole("SuperAdmin"));
+        //    await _roleManager.CreateAsync(new IdentityRole("Admin"));
+        //    await _roleManager.CreateAsync(new IdentityRole("Member"));
+        //    return Content("ugurlu oldu");
+        //}
+
+
+        //[HttpGet]
+        //public async Task<IActionResult> CreateUser()
+        //{
+        //    AppUser appUser = new AppUser
+        //    {
+        //        Name = "Super",
+        //        SurName = "Admin",
+        //        UserName = "SuperAdmin",
+        //        Email = "superadmin@gmail.com"
+        //    };
+
+        //    await _userManager.CreateAsync(appUser, "SuperAdmin133");
+        //    await _userManager.AddToRoleAsync(appUser, "SuperAdmin");
+
+
+        //    return Content("Ugurlu Oldu");
         //}
 
     }

@@ -309,8 +309,8 @@
                                     {
                                         foreach (Review review in Model.Product.Reviews)
                                         {
-                                            <div class="single-rating-item">
-                                                <div class="rating-author d-flex flex-wrap">
+                                            <div style="margin-top:30px;"  class="single-rating-item">
+                                                <div style="margin-bottom:-30px;" class="rating-author d-flex flex-wrap">
                                                     <h4 style="font-size: 20px;" class="author-name">@review.Name</h4>
                                                     <ul class="rating-star">
                                                         @for (int i = 1; i <= 5; i++)
@@ -356,58 +356,59 @@
                 <div class="col-12">
                     <div class="container">
                         <div class="owl-carousel">
-                            <div class="product-item">
-                                <div class="product-img">
-                                    <a href="shop.html">
-                                        <img class="primary-img" src="/assets/img/product/1-9-270x300.jpg" alt="" />
-                                        <img class="secondary-img" src="/assets/img/product/1-10-270x300.jpg" alt="" />
-                                    </a>
-                                    <div class="product-add-action">
-                                        <ul class="product-action">
-                                            <li>
-                                                <a href="wishlist.html">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="productModal" href="#">
-                                                    <i class="fa-regular fa-eye"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="cart.html">
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <a href="shop.html">
+                                            <img class="primary-img" src="/assets/img/product/1-9-270x300.jpg" alt="" />
+                                            <img class="secondary-img" src="/assets/img/product/1-10-270x300.jpg" alt="" />
+                                        </a>
+                                        <div class="product-add-action">
+                                            <ul class="product-action">
+                                                <li>
+                                                    <a href="wishlist.html">
+                                                        <i class="fa-regular fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="productModal" href="#">
+                                                        <i class="fa-regular fa-eye"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="cart.html">
+                                                        <i class="fa-solid fa-cart-shopping"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <a class="product-name" href="shop.html">American Marigold</a>
+                                        <div class="price-box">
+                                            <span class="new-price">$23.45</span>
+                                        </div>
+                                        <div class="rating-box">
+                                            <ul>
+                                                <li>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="product-content">
-                                    <a class="product-name" href="shop.html">American Marigold</a>
-                                    <div class="price-box">
-                                        <span class="new-price">$23.45</span>
-                                    </div>
-                                    <div class="rating-box">
-                                        <ul>
-                                            <li>
-                                                <i class="fa-solid fa-star"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa-solid fa-star"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa-solid fa-star"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa-solid fa-star"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fa-solid fa-star"></i>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="product-item">
                                 <div class="product-img">
                                     <a href="shop.html">

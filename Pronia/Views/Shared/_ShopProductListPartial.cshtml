@@ -194,7 +194,7 @@
                             @if (ViewBag.PageIndex > 1)
                             {
                                 <li class="page-item">
-                                <a class="page-link" data-categoryId="@ViewBag.CategoryId" data-pageIndexId="@(ViewBag.PageIndex-1)" data-priceRange="@ViewBag.Range">
+                                <a style="cursor:pointer;" class="page-link" data-categoryId="@ViewBag.CategoryId" data-pageIndexId="@(ViewBag.PageIndex-1)" data-priceRange="@ViewBag.Range">
                                         <i class="fa-solid fa-angles-left"></i>
                                     </a>
                                 </li>
@@ -204,7 +204,7 @@
                             if (i >= ViewBag.PageIndex - 2 && i <= ViewBag.PageIndex + 2)
                             {
                                 <li class="page-item @(i==ViewBag.PageIndex ? "active" : "")">
-                                    <a class="page-link" data-categoryId="@ViewBag.CategoryId" data-pageIndexId="@i" data-priceRange="@ViewBag.Range">@i</a>
+                                    <a style="cursor:pointer;" class="page-link" data-categoryId="@ViewBag.CategoryId" data-pageIndexId="@i" data-priceRange="@ViewBag.Range">@i</a>
                                 </li>
                             }
                         
@@ -212,7 +212,7 @@
                             @if (ViewBag.PageIndex < ViewBag.PageCount)
                             {
                                 <li class="page-item">
-                                <a class="page-link" data-categoryId="@ViewBag.CategoryId" data-pageIndexId="@(ViewBag.PageIndex+1)" data-priceRange="@ViewBag.Range">
+                                <a style="cursor:pointer;" class="page-link" data-categoryId="@ViewBag.CategoryId" data-pageIndexId="@(ViewBag.PageIndex+1)" data-priceRange="@ViewBag.Range">
                                         <i class="fa-solid fa-angles-right"></i>
                                     </a>
                                 </li>
@@ -222,9 +222,6 @@
                 </nav>
             </div>
         </div>
-        
-        
-        
         
     </div>
 </div>

@@ -280,6 +280,7 @@ C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\Pronia.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\Pronia.pdb
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\MailKit.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\MessagePack.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\MessagePack.Annotations.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -331,6 +332,7 @@ C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\MimeKit.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\NuGet.Common.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\NuGet.Configuration.dll
@@ -341,6 +343,7 @@ C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\NuGet.ProjectModel.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\NuGet.Protocol.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\NuGet.Versioning.dll
+C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\System.Composition.AttributedModel.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\System.Composition.Convention.dll
 C:\Users\Nermin\Desktop\Git Final Repo\Pronia_FinalProject_Back\Pronia\bin\Debug\net6.0\System.Composition.Hosting.dll

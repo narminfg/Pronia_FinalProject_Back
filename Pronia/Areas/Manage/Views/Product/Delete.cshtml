@@ -8,10 +8,10 @@
         <h1 class="h3 mb-4 text-gray-800">Category Delete Page</h1>
     </div>
     <div class="col-lg-2">
-        <a class="btn btn-primary" asp-action="index" asp-controller="Product" asp-area="manage"> Go To Home</a>
+        <a style="margin-top:11px;" class="btn btn-primary" asp-action="index" asp-controller="Product" asp-area="manage"> Go To Home</a>
     </div>
     <div class="col-lg-2">
-        <a class="btn btn-danger" asp-action="deleteproduct" asp-controller="Product" asp-area="manage" asp-route-id="@Model.Id">Delete</a>
+        <a style="margin-top:11px;" class="btn btn-danger" asp-action="deleteproduct" asp-controller="Product" asp-area="manage" asp-route-id="@Model.Id">Delete</a>
     </div>
 </div>
 <div class="row">
@@ -22,7 +22,7 @@
                 {
                     <img class="card-img-top" src="~/assets/img/product/@Model.MainImage" />
                 }
-                <h5 class="card-title">Name: @Model.Title</h5>
+                <h5 style="text-align:center;" class="card-title">@Model.Title</h5>
             </div>
         </div>
     </div>

@@ -8,7 +8,7 @@
             .not(this)
             .collapse('toggle');
     })
-
+    
 
     $(document).on('click', '.product-item-remove', function (e) {
         e.preventDefault();

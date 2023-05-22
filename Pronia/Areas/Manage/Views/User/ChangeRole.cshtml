@@ -19,7 +19,7 @@
             </div>
             <div class="input-group mb-3">
 
-                <select asp-for="RoleId" class="custom-select" asp-items="new SelectList( ViewBag.Role,nameof(IdentityRole.Id), nameof(IdentityRole.Name))">
+                <select style="border-radius:0.5rem;" asp-for="RoleId" class="form-select" asp-items="new SelectList( ViewBag.Role,nameof(IdentityRole.Id), nameof(IdentityRole.Name))">
                 </select>
                 <span asp-validation-for="RoleId" class=" text text-danger"></span>
             </div>

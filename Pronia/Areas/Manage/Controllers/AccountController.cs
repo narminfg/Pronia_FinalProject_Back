@@ -42,7 +42,7 @@ namespace Pronia.Areas.Manage.Controllers
 
             if (appUser == null)
             {
-                ModelState.AddModelError("", "Email ve ya Sifre Yanlisdir");
+                ModelState.AddModelError("", "Email or Password is wrong");
                 return View(loginVM);
             }
 
@@ -51,7 +51,7 @@ namespace Pronia.Areas.Manage.Controllers
 
             if (!signInResult.Succeeded)
             {
-                ModelState.AddModelError("", "Email ve ya Sifre Yanlisdir");
+                ModelState.AddModelError("", "Email or Password is wrong");
                 return View(loginVM);
             }
 
@@ -126,13 +126,13 @@ namespace Pronia.Areas.Manage.Controllers
             {
                 if (!await _userManager.CheckPasswordAsync(appUser, profileVM.OldPassword))
                 {
-                    ModelState.AddModelError("OldPassword", "Old Password yanlisdir");
+                    ModelState.AddModelError("OldPassword", "OldPassword is wrong");
                     return View(profileVM);
                 }
 
                 if (profileVM.Password == profileVM.OldPassword)
                 {
-                    ModelState.AddModelError("Password", "Sifre kohne sifre ile eyni ola bilmez");
+                    ModelState.AddModelError("Password", "Password can not be the same with OldPassword");
                     return View(profileVM);
                 }
 
