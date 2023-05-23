@@ -1,13 +1,16 @@
 ﻿using BackEndProject.Extentions;
 using BackEndProject.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pronia.DataAccessLayer;
 using Pronia.Models;
+using System.Data;
 
 namespace Pronia.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "SuperAdmin")]
     public class SettingController : Controller
     {
         private readonly AppDbContext _context;

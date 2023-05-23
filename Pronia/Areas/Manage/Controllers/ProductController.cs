@@ -1,5 +1,6 @@
 ﻿using BackEndProject.Extentions;
 using BackEndProject.Helpers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pronia.DataAccessLayer;
@@ -9,6 +10,7 @@ using Pronia.ViewModels;
 namespace Pronia.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles ="SuperAdmin")]
     public class ProductController : Controller
     {
         private readonly AppDbContext _context;

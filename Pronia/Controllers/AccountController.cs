@@ -9,6 +9,7 @@ using Pronia.Models;
 using Pronia.ViewModels.AccountViewModels;
 using Pronia.ViewModels.BasketViewModels;
 using System.Net.Mail;
+using System.Transactions;
 using static NuGet.Packaging.PackagingConstants;
 
 namespace Pronia.Controllers
@@ -30,6 +31,8 @@ namespace Pronia.Controllers
             _roleManager = roleManager;
             _context = context;
         }
+
+
         public IActionResult Register()
         {
             return View();
@@ -320,7 +323,35 @@ namespace Pronia.Controllers
 
         }
 
+        #region MyRegion
+        //public async Task<IActionResult> CreateUser()
+        //{
+        //    AppUser appUser= new AppUser();
+        //    appUser.Name = "Super";
+        //    appUser.SurName = "Admin";
+        //    appUser.Email = "SuperAdminMain@gmail.com";
+        //    appUser.UserName = "SuperAdminMain";
+        //    await _userManager.CreateAsync(appUser, "Superadmin133");
+        //    await _userManager.AddToRoleAsync(appUser, "SuperAdmin");
 
+        //    return Ok();
+
+        //}
+
+
+        //[HttpGet]
+        //public async Task<IActionResult> CreateRole()
+        //{
+        //    await _roleManager.CreateAsync(new IdentityRole("SuperAdmin"));
+        //    await _roleManager.CreateAsync(new IdentityRole("Admin"));
+        //    await _roleManager.CreateAsync(new IdentityRole("Member"));
+        //    return Content("ugurlu oldu");
+        //}
+
+        #endregion
+
+
+        #region MyRegion
         //[HttpGet]
         //public async Task<IActionResult> CreateAdmin()
         //{
@@ -335,15 +366,6 @@ namespace Pronia.Controllers
         //    await _userManager.CreateAsync(appUser,"SuperAdmin123");
         //    await _userManager.AddToRoleAsync(appUser, "SuperAdmin");
         //    return Content("Ugurlu oldu");
-        //}
-
-        //[HttpGet]
-        //public async Task<IActionResult> CreateRole()
-        //{
-        //    await _roleManager.CreateAsync(new IdentityRole("SuperAdmin"));
-        //    await _roleManager.CreateAsync(new IdentityRole("Admin"));
-        //    await _roleManager.CreateAsync(new IdentityRole("Member"));
-        //    return Content("ugurlu oldu");
         //}
 
 
@@ -364,6 +386,9 @@ namespace Pronia.Controllers
 
         //    return Content("Ugurlu Oldu");
         //}
+
+        #endregion
+
 
     }
 }

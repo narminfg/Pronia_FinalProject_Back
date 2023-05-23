@@ -8,7 +8,7 @@ using Pronia.ViewModels;
 namespace Pronia.Areas.Manage.Controllers
 {
     [Area("Manage")]
-    //[Authorize(Roles ="SuperAdmin")]
+    [Authorize(Roles = "SuperAdmin")]
     public class OrderController : Controller
     {
         private readonly AppDbContext _context;
@@ -17,7 +17,7 @@ namespace Pronia.Areas.Manage.Controllers
         {
             _context = context;
         }
-
+       
         public IActionResult Index(int pageIndex = 1)
         {
             IQueryable<Order> queries = _context.Orders
