@@ -24,7 +24,7 @@ namespace Pronia.Controllers
             IsFeaturedProducts =IsFeaturedProducts.OrderByDescending(p => p.CreatedAt).Take(8);
             BestSellerProducts = BestSellerProducts.OrderByDescending(p => p.CreatedAt).Take(8);
             LatestProducts=LatestProducts.OrderByDescending(p=>p.CreatedAt).Take(8);
-            NewProducts=NewProducts.OrderByDescending(p=>p.Id).ToList();
+            NewProducts=NewProducts.OrderByDescending(p=>p.Id).Take(10).ToList();
 
             HomeVM vm = new HomeVM
             {
